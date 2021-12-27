@@ -15,7 +15,8 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
     else
         echo "Building home derivation"
         export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
-        nix-shell '<home-manager' -A install
+        nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+        nix-shell '<home-manager>' -A install
         home-manager switch -f home.nix
     fi
 fi
