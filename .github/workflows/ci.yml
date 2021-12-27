@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    - main
+  pull_request:
+    - main
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v2.4.0
+      with:
+        submodules: true
+    - uses: cachix/install-nix-action@v15
+    - run: nix build test.nix
