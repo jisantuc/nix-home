@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -eu
+
+function usage() {
+    echo -n \
+"Usage: $(basename "$0")
+Run tests.
+"
+}
+
+if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
+    if [ "${1:-}" = "--help" ]; then
+        usage
+    else
+        echo "Building home derivation"
+        export NIX_PATH="${NIX_PATH:+$NIX_PATH:}:$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels"
+        nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+        nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+        nix-channel --update
+        nix-shell '<home-manager>' -A install
+        home-manager switch -f home.nix
+    fi
+fi
+
+
