@@ -21,6 +21,7 @@
 
   home.packages = [
     pkgs.ammonite
+    pkgs.htop
     pkgs.nixpkgs-fmt
     pkgs.ripgrep
     pkgs.tmux
