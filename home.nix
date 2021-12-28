@@ -20,6 +20,7 @@
   programs.home-manager.enable = true;
 
   home.packages = [
+    pkgs.ammonite
     pkgs.nixpkgs-fmt
     pkgs.ripgrep
     pkgs.tmux
