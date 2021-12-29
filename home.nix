@@ -1,5 +1,23 @@
 { config, pkgs, ... }:
 
+let
+
+  shellUtilities = [
+    pkgs.ripgrep
+    pkgs.tree
+  ];
+
+  scalaDeps = [
+    pkgs.ammonite
+  ];
+
+  systemUtilities = [
+    pkgs.htop
+    pkgs.nixpkgs-fmt
+    pkgs.tmux
+  ];
+
+in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -19,11 +37,5 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.packages = [
-    pkgs.ammonite
-    pkgs.htop
-    pkgs.nixpkgs-fmt
-    pkgs.ripgrep
-    pkgs.tmux
-  ];
+  home.packages = shellUtilities ++ systemUtilities ++ scalaDeps;
 }
