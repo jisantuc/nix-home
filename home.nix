@@ -25,5 +25,6 @@
     pkgs.nixpkgs-fmt
     pkgs.ripgrep
     pkgs.tmux
+    pkgs.tree
   ];
 }
