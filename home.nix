@@ -13,6 +13,7 @@ let
 
   systemUtilities = [
     pkgs.htop
+    pkgs.httpie
     pkgs.nixpkgs-fmt
     pkgs.tmux
   ];
