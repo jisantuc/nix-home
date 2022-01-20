@@ -16,6 +16,7 @@ let
     pkgs.httpie
     pkgs.nixpkgs-fmt
     pkgs.tmux
+    pkgs.wget
   ];
 
 in
