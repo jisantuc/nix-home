@@ -3,6 +3,7 @@
 let
 
   shellUtilities = [
+    pkgs.jq
     pkgs.ripgrep
     pkgs.tree
   ];
