@@ -13,6 +13,7 @@ let
   ];
 
   systemUtilities = [
+    pkgs.imagemagick
     pkgs.htop
     pkgs.httpie
     pkgs.nixpkgs-fmt
