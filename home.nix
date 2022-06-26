@@ -13,6 +13,7 @@ let
   ];
 
   systemUtilities = [
+    pkgs.asciinema
     pkgs.htop
     pkgs.httpie
     pkgs.nixpkgs-fmt
