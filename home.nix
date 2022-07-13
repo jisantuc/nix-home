@@ -13,9 +13,10 @@ let
   ];
 
   systemUtilities = [
-    pkgs.imagemagick
+    pkgs.asciinema
     pkgs.htop
     pkgs.httpie
+    pkgs.imagemagick
     pkgs.nixpkgs-fmt
     pkgs.tmux
     pkgs.wget
