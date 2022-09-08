@@ -14,12 +14,18 @@ let
 
   systemUtilities = [
     pkgs.asciinema
+    pkgs.direnv
     pkgs.htop
     pkgs.httpie
     pkgs.imagemagick
-    pkgs.nixpkgs-fmt
     pkgs.tmux
     pkgs.wget
+  ];
+
+  # Packages I need because it'll be a nix-y system
+  ourobouros = [
+    pkgs.nixpkgs-fmt
+    pkgs.rnix-lsp
   ];
 
 in
@@ -42,5 +48,5 @@ in
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.packages = shellUtilities ++ systemUtilities ++ scalaDeps;
+  home.packages = shellUtilities ++ systemUtilities ++ scalaDeps ++ ourobouros;
 }
