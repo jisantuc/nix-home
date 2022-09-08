@@ -14,6 +14,7 @@ let
 
   systemUtilities = [
     pkgs.asciinema
+    pkgs.direnv
     pkgs.htop
     pkgs.httpie
     pkgs.imagemagick
