@@ -18,6 +18,7 @@ let
     pkgs.htop
     pkgs.httpie
     pkgs.imagemagick
+    pkgs.scc
     pkgs.tmux
     pkgs.wget
   ];
