@@ -6,6 +6,7 @@ let
     pkgs.jq
     pkgs.ripgrep
     pkgs.tree
+    pkgs.bash-completion
   ];
 
   scalaDeps = [
