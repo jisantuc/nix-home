@@ -2,6 +2,7 @@
 
 let
   shellUtilities = [
+    pkgs.graphviz
     pkgs.jq
     pkgs.ripgrep
     pkgs.tree
