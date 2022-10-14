@@ -1,11 +1,12 @@
 { config, pkgs, ... }:
 
 let
-
   shellUtilities = [
+    pkgs.graphviz
     pkgs.jq
     pkgs.ripgrep
     pkgs.tree
+    pkgs.bash-completion
   ];
 
   scalaDeps = [
@@ -19,7 +20,6 @@ let
     pkgs.httpie
     pkgs.imagemagick
     pkgs.scc
-    pkgs.tmux
     pkgs.wget
   ];
 
@@ -46,8 +46,14 @@ in
   # changes in each release.
   home.stateVersion = "22.05";
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    # Let Home Manager install and manage itself.
+    home-manager.enable = true;
+
+    # Enable and configure tmux
+    tmux.enable = true;
+    tmux.extraConfig = builtins.readFile ./dotfiles/tmux.conf;
+  };
 
   home.packages = shellUtilities ++ systemUtilities ++ scalaDeps ++ ourobouros;
 }
