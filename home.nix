@@ -12,7 +12,7 @@ let
   scalaDeps = [
     pkgs.ammonite
     pkgs.coursier
-    pkgs.sbt
+    (pkgs.sbt.override { jre = pkgs.openjdk11; })
   ];
 
   systemUtilities = [
