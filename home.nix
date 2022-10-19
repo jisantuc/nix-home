@@ -65,15 +65,16 @@ rec {
       plugins =
         with pkgs.vimPlugins;
         [
+          neogit
           nvim-compe
           nvim-dap
           nvim-jdtls
           nvim-metals
           plenary-nvim
           vim-colors-solarized
-	  vim-nix
+          vim-nix
         ];
-	
+
       extraConfig = builtins.readFile ./dotfiles/vimrc;
     };
   };
