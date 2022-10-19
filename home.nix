@@ -12,7 +12,6 @@ let
   scalaDeps = [
     pkgs.ammonite
     pkgs.coursier
-    pkgs.metals
   ];
 
   systemUtilities = [
