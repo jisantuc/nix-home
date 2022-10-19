@@ -47,6 +47,7 @@ in
   home.stateVersion = "22.05";
 
   programs = {
+
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
@@ -54,6 +55,10 @@ in
     tmux.enable = true;
     tmux.extraConfig = builtins.readFile ./dotfiles/tmux.conf;
   };
+
+  # https://github.com/NixOS/nixpkgs/issues/196651
+  manual.manpages.enable = false;
+
 
   home.packages = shellUtilities ++ systemUtilities ++ scalaDeps ++ ourobouros;
 }
