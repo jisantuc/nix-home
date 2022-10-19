@@ -12,6 +12,7 @@ let
   scalaDeps = [
     pkgs.ammonite
     pkgs.coursier
+    pkgs.sbt
   ];
 
   systemUtilities = [
@@ -28,6 +29,11 @@ let
   ourobouros = [
     pkgs.nixpkgs-fmt
     pkgs.rnix-lsp
+  ];
+
+  patchedFonts = [
+    # need the parens because otherwise the space makes it look like list entries
+    (pkgs.nerdfonts.override { fonts = [ "Hasklig" "SourceCodePro" ]; })
   ];
 
 in
@@ -84,5 +90,7 @@ rec {
   # https://github.com/NixOS/nixpkgs/issues/196651
   manual.manpages.enable = false;
 
-  home.packages = shellUtilities ++ systemUtilities ++ scalaDeps ++ ourobouros;
+  fonts.fontconfig.enable = true;
+
+  home.packages = shellUtilities ++ systemUtilities ++ scalaDeps ++ ourobouros ++ patchedFonts;
 }
