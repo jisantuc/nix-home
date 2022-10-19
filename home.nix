@@ -52,8 +52,10 @@ rec {
     home-manager.enable = true;
 
     # Enable and configure tmux
-    tmux.enable = true;
-    tmux.extraConfig = builtins.readFile ./dotfiles/tmux.conf;
+    tmux = {
+      enable = true;
+      extraConfig = builtins.readFile ./dotfiles/tmux.conf;
+    };
 
     neovim = {
       enable = true;
