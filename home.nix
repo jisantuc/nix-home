@@ -11,6 +11,8 @@ let
 
   scalaDeps = [
     pkgs.ammonite
+    pkgs.coursier
+    pkgs.metals
   ];
 
   systemUtilities = [
@@ -53,7 +55,28 @@ in
     # Enable and configure tmux
     tmux.enable = true;
     tmux.extraConfig = builtins.readFile ./dotfiles/tmux.conf;
+
+    neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+
+      plugins =
+        with pkgs.vimPlugins;
+        [
+          nvim-compe
+          nvim-dap
+          nvim-jdtls
+          nvim-metals
+          plenary-nvim
+          vim-colors-solarized
+	  vim-nix
+        ];
+	
+      extraConfig = builtins.readFile ./dotfiles/vimrc;
+    };
   };
+
 
   home.packages = shellUtilities ++ systemUtilities ++ scalaDeps ++ ourobouros;
 }
