@@ -31,11 +31,11 @@ let
   ];
 
 in
-{
+rec {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "james";
-  home.homeDirectory = "/Users/james";
+  home.homeDirectory = if builtins.currentSystem == "x86_64-linux" then "/home/${home.username}/" else "/Users/${home.username}";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
