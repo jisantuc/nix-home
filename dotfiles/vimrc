@@ -5,6 +5,12 @@ colorscheme solarized
 set number relativenumber
 
 " ====================
+" nvim-tree setup
+" ====================
+
+:lua require("nvim-tree").setup({renderer = { group_empty = true }})
+
+" ====================
 " nvim-metals setup
 " ====================
 

@@ -70,6 +70,7 @@ rec {
           nvim-dap
           nvim-jdtls
           nvim-metals
+          nvim-tree-lua
           plenary-nvim
           vim-colors-solarized
           vim-nix
