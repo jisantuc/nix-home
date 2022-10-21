@@ -82,7 +82,6 @@ rec {
         [
           fzf-lua
           neogit
-          nvim-compe
           nvim-dap
           nvim-jdtls
           nvim-metals
