@@ -72,8 +72,11 @@ vim.opt.wildignore:append "**/.metals/*"
 -- launch git conveniently
 vim.api.nvim_set_keymap("n", "<space>gs", "<cmd>:Neogit<CR>", { noremap = true })
 
--- launch tree view conveniently
+-- tree view mappings
+-- launch it
 vim.api.nvim_set_keymap("n", "<space>tt", "<cmd>:NvimTreeToggle<CR>", { noremap = true })
+-- find file
+vim.api.nvim_set_keymap("n", "<space>tf", "<cmd>:NvimTreeFindFile<CR>", { noremap = true })
 
 require("nvim-web-devicons").setup {
   color_icons = true;
