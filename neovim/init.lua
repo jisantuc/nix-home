@@ -37,6 +37,10 @@ vim.api.nvim_set_keymap( "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>",
 vim.api.nvim_set_keymap( "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true })
 vim.api.nvim_set_keymap( "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true })
 vim.api.nvim_set_keymap( "n", "<leader>a", "<cmd>lua require(\"metals\").open_all_diagnostics()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>aa", "<cmd>lua vim.diagnostic.setqflist()<CR>", { noremap = true }) -- all workspace diagnostics
+vim.api.nvim_set_keymap("n", "<leader>ae", "<cmd>lua vim.diagnostic.setqflist({severity = \"E\"})<CR>", { noremap = true }) -- all workspace errors
+vim.api.nvim_set_keymap("n", "<leader>aw", "<cmd>lua vim.diagnostic.setqflist({severity = \"W\"})<CR>", { noremap = true }) -- all workspace warnings
+vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.setloclist()<CR>", { noremap = true }) -- buffer diagnostics only
 
 -- make find much better
 vim.opt.path:remove "/usr/include"
