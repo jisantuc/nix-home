@@ -28,15 +28,15 @@ vim.api.nvim_set_keymap(
   { noremap = true } -- some options, I don't know what I can do here
 )
 
-vim.api.nvim_set_keymap( "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "n", "gds", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "n", "gws", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true })
-vim.api.nvim_set_keymap( "n", "<leader>a", "<cmd>lua require(\"metals\").open_all_diagnostics()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "gds", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "gws", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>a", "<cmd>lua require(\"metals\").open_all_diagnostics()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<leader>aa", "<cmd>lua vim.diagnostic.setqflist()<CR>", { noremap = true }) -- all workspace diagnostics
 vim.api.nvim_set_keymap("n", "<leader>ae", "<cmd>lua vim.diagnostic.setqflist({severity = \"E\"})<CR>", { noremap = true }) -- all workspace errors
 vim.api.nvim_set_keymap("n", "<leader>aw", "<cmd>lua vim.diagnostic.setqflist({severity = \"W\"})<CR>", { noremap = true }) -- all workspace warnings
