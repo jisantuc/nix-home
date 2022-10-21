@@ -11,6 +11,12 @@ require("nvim-tree").setup({
   filters = { dotfiles = false }
 })
 
+-- setup neogit
+local neogit = require("neogit")
+neogit.setup {
+  kind = "vsplit"
+}
+
 -- activate and configure metals
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
