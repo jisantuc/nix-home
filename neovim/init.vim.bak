@@ -8,15 +8,13 @@ set number relativenumber
 " nvim-tree setup
 " ====================
 
-:lua require("nvim-tree").setup({renderer = { group_empty = true }})
-
 " ====================
 " nvim-metals setup
 " ====================
 
 " mappings
-nnoremap <silent> gd          <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K           <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gd          <cmd>lua vim.lsp.buf.definition()<CR> -- x
+nnoremap <silent> K           <cmd>lua vim.lsp.buf.hover()<CR> -- x
 nnoremap <silent> gi          <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gr          <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gds         <cmd>lua vim.lsp.buf.document_symbol()<CR>
@@ -29,17 +27,6 @@ nnoremap <silent> <leader>a   <cmd>lua require'metals'.open_all_diagnostics()<CR
 nnoremap <silent> <space>d    <cmd>lua vim.diagnostic.set_loclist()<CR>
 nnoremap <silent> [c          <cmd>lua vim.lsp.diagnostic.goto_prev { wrap = false }<CR>
 nnoremap <silent> ]c          <cmd>lua vim.lsp.diagnostic.goto_next { wrap = false }<CR>
-
-:lua << EOF
-  metals_config = require'metals'.bare_config()
-  metals_config.settings = {
-     showImplicitArguments = true,
-     excludedPackages = {
-       "akka.actor.typed.javadsl",
-       "com.github.swagger.akka.javadsl"
-     }
-  }
-EOF
 
 if has('nvim-0.5')
   augroup lsp

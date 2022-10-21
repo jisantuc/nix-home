@@ -9,10 +9,11 @@ let
     pkgs.bash-completion
   ];
 
-  scalaDeps = [
+  jvmDeps = [
     pkgs.ammonite
     pkgs.coursier
     (pkgs.sbt.override { jre = pkgs.openjdk11; })
+    pkgs.jdt-language-server
   ];
 
   systemUtilities = [
@@ -53,6 +54,13 @@ rec {
   # changes in each release.
   home.stateVersion = "22.05";
 
+
+  xdg.configFile.nvim = {
+    source = ./neovim;
+    recursive = true;
+  };
+
+
   programs = {
 
     # Let Home Manager install and manage itself.
@@ -72,6 +80,7 @@ rec {
       plugins =
         with pkgs.vimPlugins;
         [
+          fzf-lua
           neogit
           nvim-compe
           nvim-dap
@@ -82,8 +91,6 @@ rec {
           vim-colors-solarized
           vim-nix
         ];
-
-      extraConfig = builtins.readFile ./dotfiles/vimrc;
     };
   };
 
@@ -92,5 +99,5 @@ rec {
 
   fonts.fontconfig.enable = true;
 
-  home.packages = shellUtilities ++ systemUtilities ++ scalaDeps ++ ourobouros ++ patchedFonts;
+  home.packages = shellUtilities ++ systemUtilities ++ jvmDeps ++ ourobouros ++ patchedFonts;
 }
