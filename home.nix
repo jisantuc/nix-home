@@ -86,6 +86,7 @@ rec {
           nvim-jdtls
           nvim-metals
           nvim-tree-lua
+          nvim-web-devicons
           plenary-nvim
           vim-colors-solarized
           vim-nix

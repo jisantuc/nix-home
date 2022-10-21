@@ -1,4 +1,15 @@
-require("nvim-tree").setup({renderer = { group_empty = true }})
+-- customize nvim-tree rendering
+require("nvim-tree").setup({
+  renderer = {
+    group_empty = true,
+    highlight_git = true
+  },
+  view = {
+    adaptive_size = true
+  },
+  diagnostics = { enable = true },
+  filters = { dotfiles = false }
+})
 
 -- activate and configure metals
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
@@ -51,6 +62,17 @@ vim.opt.wildignore:append "**/target/*"
 vim.opt.wildignore:append "**/.bloop/*"
 vim.opt.wildignore:append "**/.bsp/*"
 vim.opt.wildignore:append "**/.metals/*"
+
+-- launch git conveniently
+vim.api.nvim_set_keymap("n", "<space>gs", "<cmd>:Neogit<CR>", { noremap = true })
+
+-- launch tree view conveniently
+vim.api.nvim_set_keymap("n", "<space>tt", "<cmd>:NvimTreeToggle<CR>", { noremap = true })
+
+require("nvim-web-devicons").setup {
+  color_icons = true;
+  default = true;
+}
 
 -- make colors look nice
 vim.opt.background = "light"
