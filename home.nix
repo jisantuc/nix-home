@@ -94,9 +94,6 @@ rec {
     };
   };
 
-  # https://github.com/NixOS/nixpkgs/issues/196651
-  manual.manpages.enable = false;
-
   fonts.fontconfig.enable = true;
 
   home.packages = shellUtilities ++ systemUtilities ++ jvmDeps ++ ourobouros ++ patchedFonts;
