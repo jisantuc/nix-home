@@ -1,3 +1,7 @@
+-- turn on line numbers, like we had in the old country
+vim.wo.number = true
+vim.wo.relativenumber = true
+
 -- customize nvim-tree rendering
 require("nvim-tree").setup({
   renderer = {
@@ -11,10 +15,16 @@ require("nvim-tree").setup({
   filters = { dotfiles = false }
 })
 
+-- setup neogit
+local neogit = require("neogit")
+neogit.setup {
+  kind = "vsplit"
+}
+
 -- activate and configure metals
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "scala", "sbt", "java" },
+  pattern = { "scala", "sbt" },
   callback = function()
     require("metals").initialize_or_attach({})
   end,
@@ -30,6 +40,9 @@ metals_config.settings = {
        }
 }
 metals_config.init_options.statusBarProvider = "on"
+
+-- activate rnix-lsp
+require("lspconfig").rnix.setup{}
 
 -- configure lsp keybindings
 vim.api.nvim_set_keymap(
@@ -62,12 +75,19 @@ vim.opt.wildignore:append "**/target/*"
 vim.opt.wildignore:append "**/.bloop/*"
 vim.opt.wildignore:append "**/.bsp/*"
 vim.opt.wildignore:append "**/.metals/*"
+vim.api.nvim_set_keymap("n", "<space>ff", "<cmd>:FzfLua files<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<space>fb", "<cmd>:FzfLua buffers<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<space>fg", "<cmd>:FzfLua git_files<CR>", { noremap = true })
+
 
 -- launch git conveniently
 vim.api.nvim_set_keymap("n", "<space>gs", "<cmd>:Neogit<CR>", { noremap = true })
 
--- launch tree view conveniently
+-- tree view mappings
+-- launch it
 vim.api.nvim_set_keymap("n", "<space>tt", "<cmd>:NvimTreeToggle<CR>", { noremap = true })
+-- find file
+vim.api.nvim_set_keymap("n", "<space>tf", "<cmd>:NvimTreeFindFile<CR>", { noremap = true })
 
 require("nvim-web-devicons").setup {
   color_icons = true;
