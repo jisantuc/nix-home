@@ -13,13 +13,11 @@ let
     pkgs.ammonite
     pkgs.coursier
     (pkgs.sbt.override { jre = pkgs.openjdk11; })
-    pkgs.jdt-language-server
   ];
 
   systemUtilities = [
     pkgs.asciinema
     pkgs.direnv
-    pkgs.fzf
     pkgs.htop
     pkgs.httpie
     pkgs.imagemagick
@@ -30,7 +28,6 @@ let
   # Packages I need because it'll be a nix-y system
   ourobouros = [
     pkgs.nixpkgs-fmt
-    pkgs.rnix-lsp
   ];
 
   patchedFonts = [
@@ -85,6 +82,7 @@ in
           neogit
           nvim-dap
           nvim-jdtls
+          nvim-lspconfig
           nvim-metals
           nvim-tree-lua
           nvim-web-devicons
@@ -92,10 +90,20 @@ in
           vim-colors-solarized
           vim-nix
         ];
+      extraPackages = with pkgs; [
+        fzf
+        jdt-language-server
+        rnix-lsp
+      ];
     };
   };
 
   fonts.fontconfig.enable = true;
 
-  home.packages = shellUtilities ++ systemUtilities ++ jvmDeps ++ ourobouros ++ patchedFonts;
+  home.packages =
+    shellUtilities ++
+    systemUtilities ++
+    jvmDeps ++
+    ourobouros ++
+    patchedFonts;
 }
