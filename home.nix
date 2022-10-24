@@ -19,6 +19,7 @@ let
   systemUtilities = [
     pkgs.asciinema
     pkgs.direnv
+    pkgs.fzf
     pkgs.htop
     pkgs.httpie
     pkgs.imagemagick
@@ -38,7 +39,7 @@ let
   ];
 
 in
-rec {
+{
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "james";

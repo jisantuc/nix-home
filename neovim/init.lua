@@ -68,6 +68,10 @@ vim.opt.wildignore:append "**/target/*"
 vim.opt.wildignore:append "**/.bloop/*"
 vim.opt.wildignore:append "**/.bsp/*"
 vim.opt.wildignore:append "**/.metals/*"
+vim.api.nvim_set_keymap("n", "<space>ff", "<cmd>:FzfLua files<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<space>fb", "<cmd>:FzfLua buffers<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<space>fg", "<cmd>:FzfLua git_files<CR>", { noremap = true })
+
 
 -- launch git conveniently
 vim.api.nvim_set_keymap("n", "<space>gs", "<cmd>:Neogit<CR>", { noremap = true })
