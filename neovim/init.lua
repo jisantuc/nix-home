@@ -1,3 +1,7 @@
+-- turn on line numbers, like we had in the old country
+vim.wo.number = true
+vim.wo.relativenumber = true
+
 -- customize nvim-tree rendering
 require("nvim-tree").setup({
   renderer = {
