@@ -50,7 +50,7 @@ in
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.05";
+  home.stateVersion = "22.11";
 
 
   xdg.configFile.nvim = {
@@ -87,6 +87,7 @@ in
           nvim-tree-lua
           nvim-web-devicons
           plenary-nvim
+          purescript-vim
           vim-colors-solarized
           vim-nix
         ];

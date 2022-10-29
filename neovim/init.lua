@@ -44,6 +44,9 @@ metals_config.init_options.statusBarProvider = "on"
 -- activate rnix-lsp
 require("lspconfig").rnix.setup{}
 
+-- activate purescript ls
+require("lspconfig").purescriptls.setup{}
+
 -- configure lsp keybindings
 vim.api.nvim_set_keymap(
   "n", -- mode
