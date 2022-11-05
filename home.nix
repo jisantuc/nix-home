@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   shellUtilities = [
@@ -78,8 +78,12 @@ in
       plugins =
         with pkgs.vimPlugins;
         [
+          cmp-nvim-lsp
           fzf-lua
+          luasnip
+          markdown-preview-nvim
           neogit
+          nvim-cmp
           nvim-dap
           nvim-jdtls
           nvim-lspconfig
