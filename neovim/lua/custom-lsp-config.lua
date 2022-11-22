@@ -26,6 +26,9 @@ require("lspconfig").rnix.setup{}
 -- activate purescript ls
 require("lspconfig").purescriptls.setup{}
 
+-- activate typescript ls
+require("lspconfig").tsserver.setup{}
+
 -- configure lsp keybindings
 vim.api.nvim_set_keymap(
   "n", -- mode
@@ -47,4 +50,3 @@ vim.api.nvim_set_keymap("n", "<leader>aa", "<cmd>lua vim.diagnostic.setqflist()<
 vim.api.nvim_set_keymap("n", "<leader>ae", "<cmd>lua vim.diagnostic.setqflist({severity = \"E\"})<CR>", { noremap = true }) -- all workspace errors
 vim.api.nvim_set_keymap("n", "<leader>aw", "<cmd>lua vim.diagnostic.setqflist({severity = \"W\"})<CR>", { noremap = true }) -- all workspace warnings
 vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.setloclist()<CR>", { noremap = true }) -- buffer diagnostics only
-

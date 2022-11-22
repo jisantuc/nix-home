@@ -99,6 +99,7 @@ in
         fzf
         jdt-language-server
         rnix-lsp
+        nodePackages.typescript-language-server
       ];
     };
   };
