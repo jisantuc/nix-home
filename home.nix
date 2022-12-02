@@ -35,6 +35,15 @@ let
     (pkgs.nerdfonts.override { fonts = [ "Hasklig" "SourceCodePro" ]; })
   ];
 
+  lazyGitNeovimConfig =
+    let
+      extraConfigLines = builtins.readFile ./neovim/extra.lua;
+      configFileLocation =
+        if builtins.currentSystem == "x86_64-darwin"
+        then "Library/Application Support/lazygit/config.yml"
+        else ".config/lazygit/config.yml";
+    in
+    builtins.replaceStrings [ "SUBSTITUTE" ] [ "${builtins.getEnv "HOME"}/${configFileLocation}" ] extraConfigLines;
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -52,22 +61,24 @@ in
   # changes in each release.
   home.stateVersion = "22.11";
 
-
   xdg.configFile.nvim = {
     source = ./neovim;
     recursive = true;
   };
 
+  xdg.configFile."nvim/lua/lazygit-config-extra.lua".text = lazyGitNeovimConfig;
 
   programs = {
 
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
-    # Enable and configure tmux
-    tmux = {
+    lazygit = {
       enable = true;
-      extraConfig = builtins.readFile ./dotfiles/tmux.conf;
+      settings.gui = {
+        theme.lightTheme = true;
+        showIcons = true;
+      };
     };
 
     neovim = {
@@ -80,6 +91,7 @@ in
         [
           cmp-nvim-lsp
           fzf-lua
+          lazygit-nvim
           luasnip
           markdown-preview-nvim
           neogit
@@ -101,7 +113,15 @@ in
         rnix-lsp
         nodePackages.typescript-language-server
       ];
+
     };
+
+    # Enable and configure tmux
+    tmux = {
+      enable = true;
+      extraConfig = builtins.readFile ./dotfiles/tmux.conf;
+    };
+
   };
 
   fonts.fontconfig.enable = true;
