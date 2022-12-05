@@ -30,10 +30,17 @@ require("lspconfig").purescriptls.setup{}
 require("lspconfig").tsserver.setup{}
 
 -- activate hls
--- TODO omg there's a much better option than doing this with built-in hls
--- https://github.com/MrcJkb/haskell-tools.nvim
-require("lspconfig").hls.setup {
-  cmd = { "haskell-language-server", "--lsp" }
+local ht = require('haskell-tools')
+local def_opts = { noremap = true, silent = true, }
+ht.setup {
+  hls = {
+    -- See nvim-lspconfig's  suggested configuration for keymaps, etc.
+    settings = {
+      haskell = {
+        formattingProvider = 'ormolu',
+      }
+    }
+  },
 }
 
 -- configure lsp keybindings
