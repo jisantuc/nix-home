@@ -10,4 +10,5 @@ vim.opt.wildignore:append "**/.metals/*"
 vim.api.nvim_set_keymap("n", "<space>ff", "<cmd>:FzfLua files<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<space>fb", "<cmd>:FzfLua buffers<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<space>fg", "<cmd>:FzfLua git_files<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<space>fs", "<cmd>:FzfLua grep_project<CR>", { noremap = true })
 
