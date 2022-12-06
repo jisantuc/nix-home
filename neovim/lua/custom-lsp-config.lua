@@ -33,6 +33,11 @@ require("lspconfig").tsserver.setup{}
 local ht = require('haskell-tools')
 local def_opts = { noremap = true, silent = true, }
 ht.setup {
+  tools = {
+    hover = {
+      disable = true,
+    }
+  },
   hls = {
     -- See nvim-lspconfig's  suggested configuration for keymaps, etc.
     settings = {
