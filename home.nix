@@ -19,7 +19,7 @@ let
     pkgs.asciinema
     pkgs.direnv
     pkgs.htop
-    pkgs.httpie
+    # pkgs.httpie
     pkgs.imagemagick
     pkgs.scc
     pkgs.wget
@@ -27,6 +27,7 @@ let
 
   # Packages I need because it'll be a nix-y system
   ourobouros = [
+    pkgs.cachix
     pkgs.nixpkgs-fmt
   ];
 
