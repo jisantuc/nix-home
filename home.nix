@@ -19,7 +19,7 @@ let
     pkgs.asciinema
     pkgs.direnv
     pkgs.htop
-    pkgs.httpie
+    # pkgs.httpie
     pkgs.imagemagick
     pkgs.scc
     pkgs.wget
