@@ -6,9 +6,6 @@
 -- meanwhile, lots of things have to do with setting up and configuring LSP for different languages,
 -- so they all hang out together in lsp-config.lua
 
--- launch markdown preview
-vim.api.nvim_set_keymap("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { noremap = true });
-
 require("completion-config")
 require("custom-lsp-config")
 require("fzf-config")
