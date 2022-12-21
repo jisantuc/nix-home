@@ -94,11 +94,8 @@ in
           fzf-lua
           lazygit-nvim
           luasnip
-          markdown-preview-nvim
           neogit
           nvim-cmp
-          nvim-dap
-          nvim-jdtls
           nvim-lspconfig
           nvim-metals
           nvim-tree-lua
