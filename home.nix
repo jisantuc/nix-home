@@ -96,6 +96,7 @@ in
           cmp-nvim-lsp
           fzf-lua
           git-blame-nvim
+          haskell-tools-nvim
           lazygit-nvim
           luasnip
           neogit

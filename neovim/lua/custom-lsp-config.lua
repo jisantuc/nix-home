@@ -29,6 +29,25 @@ require("lspconfig").purescriptls.setup{}
 -- activate typescript ls
 require("lspconfig").tsserver.setup{}
 
+-- activate hls
+local ht = require('haskell-tools')
+local def_opts = { noremap = true, silent = true, }
+ht.setup {
+  tools = {
+    hover = {
+      disable = true,
+    }
+  },
+  hls = {
+    -- See nvim-lspconfig's  suggested configuration for keymaps, etc.
+    settings = {
+      haskell = {
+        formattingProvider = 'ormolu',
+      }
+    }
+  },
+}
+
 -- configure lsp keybindings
 vim.api.nvim_set_keymap(
   "n", -- mode
