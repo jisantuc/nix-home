@@ -12,7 +12,7 @@ vim.api.nvim_set_keymap("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { noremap
 require("completion-config")
 require("custom-lsp-config")
 require("fzf-config")
-require("lazygit-config")
+require("git-config")
 require("lazygit-config-extra")
 require("tree-config")
 require("vim-stuff")

@@ -92,6 +92,7 @@ in
         [
           cmp-nvim-lsp
           fzf-lua
+          git-blame-nvim
           lazygit-nvim
           luasnip
           markdown-preview-nvim
