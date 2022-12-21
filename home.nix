@@ -17,11 +17,9 @@ let
 
   systemUtilities = [
     pkgs.asciinema
-    pkgs.direnv
     pkgs.htop
     # pkgs.httpie
     pkgs.imagemagick
-    pkgs.scc
     pkgs.wget
   ];
 
@@ -69,6 +67,11 @@ in
 
   xdg.configFile."nvim/lua/lazygit-config-extra.lua".text = lazyGitNeovimConfig;
 
+  xdg.configFile.fish = {
+    source = ./fish;
+    recursive = true;
+  };
+
   programs = {
 
     # Let Home Manager install and manage itself.
@@ -113,6 +116,26 @@ in
         nodePackages.typescript-language-server
       ];
 
+    };
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+
+    # Enable and configure zshell
+    fish = {
+      enable = true;
+      plugins = with pkgs.fishPlugins; [
+        { name = "bass"; src = bass.src; }
+      ];
+    };
+
+    # Enable starship, a universal prompt controller
+    starship = {
+      enable = true;
+      enableFishIntegration = true;
+      settings = import ./dotfiles/starship.nix;
     };
 
     # Enable and configure tmux
