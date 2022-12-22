@@ -94,6 +94,7 @@ in
         with pkgs.vimPlugins;
         [
           cmp-nvim-lsp
+          dhall-vim
           fzf-lua
           git-blame-nvim
           haskell-tools-nvim
@@ -111,10 +112,11 @@ in
           vim-nix
         ];
       extraPackages = with pkgs; [
+        dhall-lsp-server
         fzf
         jdt-language-server
-        rnix-lsp
         nodePackages.typescript-language-server
+        rnix-lsp
       ];
 
     };

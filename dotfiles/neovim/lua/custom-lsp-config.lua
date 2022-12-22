@@ -48,6 +48,9 @@ ht.setup {
   },
 }
 
+-- activate dhall ls
+require("lspconfig").dhall_lsp_server.setup{}
+
 -- configure lsp keybindings
 vim.api.nvim_set_keymap(
   "n", -- mode
