@@ -5,7 +5,9 @@ alias show-ip "ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
 
 alias xmllint "xmllint --format"
 
-bass source $HOME/.nix-profile/etc/profile.d/nix.sh
+export PATH="/usr/local/bin:$PATH"
+
+bass source $HOME/.config/fish/use-nix.sh
 
 starship init fish | source
 

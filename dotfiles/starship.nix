@@ -1,6 +1,6 @@
 {
 
-  format = "$character";
+  format = "$directory$character";
   right_format = "$all";
 
   # don't show the weird up-down arrow for shlvl

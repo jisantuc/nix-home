@@ -36,7 +36,7 @@ let
 
   lazyGitNeovimConfig =
     let
-      extraConfigLines = builtins.readFile ./neovim/extra.lua;
+      extraConfigLines = builtins.readFile ./dotfiles/neovim/extra.lua;
       configFileLocation =
         if builtins.currentSystem == "x86_64-darwin"
         then "Library/Application Support/lazygit/config.yml"
@@ -61,14 +61,14 @@ in
   home.stateVersion = "22.11";
 
   xdg.configFile.nvim = {
-    source = ./neovim;
+    source = ./dotfiles/neovim;
     recursive = true;
   };
 
   xdg.configFile."nvim/lua/lazygit-config-extra.lua".text = lazyGitNeovimConfig;
 
   xdg.configFile.fish = {
-    source = ./fish;
+    source = ./dotfiles/fish;
     recursive = true;
   };
 
