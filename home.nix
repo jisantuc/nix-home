@@ -99,7 +99,6 @@ in
       extraPackages = with pkgs; [
         dhall-lsp-server
         fzf
-        jdt-language-server
         nodePackages.typescript-language-server
         rnix-lsp
       ];
