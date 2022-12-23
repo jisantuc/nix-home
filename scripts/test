@@ -10,18 +10,7 @@ Run tests.
 }
 
 function build_home() {
-    export NIX_PATH="${NIX_PATH:+$NIX_PATH:}:$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/$USER/channels"
-    nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
-    nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-    nix-channel --update
-    # configure my binary cache
-    nix-shell -p cachix --run "cachix use jisantuc"
-    # install home-manager
-    nix-shell '<home-manager>' -A install
-    # switch to the current home manager derivation
-    home-manager switch -f home.nix
-    # push everything to cachix
-    home-manager instantiate | cachix push -c 16 jisantuc
+    ./scripts/switch "${1}"
 }
 
 function check_formatting() {
@@ -33,7 +22,7 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
         usage
     else
         echo "Building home derivation"
-        build_home
+        build_home "${1}"
 
         echo "Verifying all nix files follow formatting conventions"
         check_formatting

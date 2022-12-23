@@ -29,7 +29,6 @@
   erlang.format = "[$symbol]($style)";
   golang.format = "[$symbol]($style)";
   haskell.format = "[$symbol]($style)";
-  haxe.format = "[$symbol]($style)";
   helm.format = "[$symbol]($style)";
   java.format = "[$symbol]($style)";
   julia.format = "[$symbol]($style)";
@@ -40,7 +39,6 @@
   nix_shell.format = "[$symbol]($style)";
   nodejs.format = "[$symbol]($style)";
   ocaml.format = "[$symbol(\($switch_indicator$switch_name\) )]($style)";
-  opa.format = "[$symbol]($style)";
   perl.format = "[$symbol]($style)";
   php.format = "[$symbol]($style)";
   pulumi.format = "[$symbol$stack]($style)";

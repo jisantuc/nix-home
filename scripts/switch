@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+
+function build_linux() {
+  nix build --impure .#homeConfigurations.linux.activationPackage
+}
+
+function build_macos() {
+  nix build --impure .#homeConfigurations.macOS.activationPackage
+}
+
+case "${1}" in
+  linux) build_linux;;
+  macos) build_macos;;
+esac
+
+./result/activate
