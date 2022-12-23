@@ -25,7 +25,6 @@ let
 
   # Packages I need because it'll be a nix-y system
   ourobouros = [
-    pkgs.cachix
     pkgs.nixpkgs-fmt
   ];
 
@@ -33,16 +32,6 @@ let
     # need the parens because otherwise the space makes it look like list entries
     (pkgs.nerdfonts.override { fonts = [ "Hasklig" "SourceCodePro" ]; })
   ];
-
-  lazyGitNeovimConfig =
-    let
-      extraConfigLines = builtins.readFile ./dotfiles/neovim/extra.lua;
-      configFileLocation =
-        if builtins.currentSystem == "x86_64-darwin"
-        then "Library/Application Support/lazygit/config.yml"
-        else ".config/lazygit/config.yml";
-    in
-    builtins.replaceStrings [ "SUBSTITUTE" ] [ "${builtins.getEnv "HOME"}/${configFileLocation}" ] extraConfigLines;
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -65,12 +54,12 @@ in
     recursive = true;
   };
 
-  xdg.configFile."nvim/lua/lazygit-config-extra.lua".text = lazyGitNeovimConfig;
-
   xdg.configFile.fish = {
     source = ./dotfiles/fish;
     recursive = true;
   };
+
+  xdg.configFile."lazygit/config.yml".text = builtins.readFile ./dotfiles/lazygit.yml;
 
   programs = {
 
@@ -79,10 +68,6 @@ in
 
     lazygit = {
       enable = true;
-      settings.gui = {
-        theme.lightTheme = true;
-        showIcons = true;
-      };
     };
 
     neovim = {
@@ -114,7 +99,6 @@ in
       extraPackages = with pkgs; [
         dhall-lsp-server
         fzf
-        jdt-language-server
         nodePackages.typescript-language-server
         rnix-lsp
       ];

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -e
+
+function build_linux() {
+  nix build --impure .#homeConfigurations.linux.activationPackage
+
+  ./result/activate
+}
+
+function build_macos() {
+  export NIX_PATH="${NIX_PATH:+$NIX_PATH:}:$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/$USER/channels"
+  nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+  nix-channel --update
+  # install home-manager
+  nix-shell '<home-manager>' -A install
+  # switch to the current home manager derivation
+  home-manager switch -f home.nix
+}
+
+case "${1}" in
+  linux) build_linux;;
+  macos) build_macos;;
+esac
