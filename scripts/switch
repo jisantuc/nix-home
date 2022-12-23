@@ -4,6 +4,8 @@ set -e
 
 function build_linux() {
   nix build --impure .#homeConfigurations.linux.activationPackage
+
+  ./result/activate
 }
 
 function build_macos() {
@@ -21,5 +23,3 @@ case "${1}" in
   linux) build_linux;;
   macos) build_macos;;
 esac
-
-./result/activate
