@@ -22,7 +22,8 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
         usage
     else
         echo "Building home derivation"
-        build_home "${1,,}"
+        lowercasedArg=$(tr '[:upper:]' '[:lower:]' <<< "${1}")
+        build_home "${lowercasedArg}"
 
         echo "Verifying all nix files follow formatting conventions"
         check_formatting
