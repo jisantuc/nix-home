@@ -20,6 +20,11 @@ jobs:
       with:
         authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
         extraPullNames: jisantuc
-    - run: ./scripts/test
+    - run: ./scripts/test linux
+      if: ${{ runner.os == "Linux" }}
+      env:
+        CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
+    - run: ./scripts/test macos
+      if: ${{ runner.os == "macOS" }}
       env:
         CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
