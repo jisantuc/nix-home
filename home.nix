@@ -25,7 +25,6 @@ let
 
   # Packages I need because it'll be a nix-y system
   ourobouros = [
-    pkgs.cachix
     pkgs.nixpkgs-fmt
   ];
 
