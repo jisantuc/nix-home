@@ -3,31 +3,32 @@
 set -eu
 
 function usage() {
-    echo -n \
+  echo -n \
 "Usage: $(basename "$0")
 Run tests.
 "
 }
 
 function build_home() {
-    ./scripts/switch "${1}"
+  ./scripts/switch "${1}"
 }
 
 function check_formatting() {
-    nixpkgs-fmt --check *.nix
+  nixpkgs-fmt --check *.nix
 }
 
 if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
-    if [ "${1:-}" = "--help" ]; then
-        usage
-    else
-        echo "Building home derivation"
-        lowercasedArg=$(tr '[:upper:]' '[:lower:]' <<< "${1}")
-        build_home "${lowercasedArg}"
+  if [ "${1:-}" = "--help" ]; then
+    usage
+  else
+    echo "Building home derivation"
+    lowercasedArg=$(tr '[:upper:]' '[:lower:]' <<< "${1}")
+    build_home "${lowercasedArg}"
 
-        echo "Verifying all nix files follow formatting conventions"
-        check_formatting
-    fi
+    echo "Verifying all nix files follow formatting conventions"
+    # This is after building home, which takes longer, because it depends
+    # on a formatting checker installed in the home manager derivation
+    check_formatting
+  fi
 fi
-
 
