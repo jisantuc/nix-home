@@ -32,6 +32,24 @@ let
     # need the parens because otherwise the space makes it look like list entries
     (pkgs.nerdfonts.override { fonts = [ "Hasklig" "SourceCodePro" ]; })
   ];
+
+  treesitterGrammars = (p: [
+    p.haskell
+    p.java
+    p.javascript
+    p.json
+    p.kotlin
+    p.markdown
+    p.markdown-inline
+    p.nix
+    p.python
+    p.scala
+    p.sql
+    p.tsx
+    p.typescript
+    p.vim
+    p.yaml
+  ]);
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -78,7 +96,9 @@ in
       plugins =
         with pkgs.vimPlugins;
         [
+          cmp-buffer
           cmp-nvim-lsp
+          cmp-treesitter
           dhall-vim
           fzf-lua
           git-blame-nvim
@@ -90,6 +110,7 @@ in
           nvim-lspconfig
           nvim-metals
           nvim-tree-lua
+          (nvim-treesitter.withPlugins treesitterGrammars)
           nvim-web-devicons
           plenary-nvim
           purescript-vim
