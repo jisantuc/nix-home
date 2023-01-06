@@ -120,6 +120,7 @@ in
       extraPackages = with pkgs; [
         dhall-lsp-server
         fzf
+        kotlin-language-server
         nodePackages.typescript-language-server
         rnix-lsp
       ];
