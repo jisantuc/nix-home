@@ -8,6 +8,7 @@
 
 require("completion-config")
 require("custom-lsp-config")
+require("custom-orgmode")
 require("fzf-config")
 require("git-config")
 require("tree-config")

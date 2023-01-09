@@ -42,6 +42,7 @@ let
     p.markdown
     p.markdown-inline
     p.nix
+    p.org
     p.python
     p.scala
     p.sql
@@ -112,6 +113,7 @@ in
           nvim-tree-lua
           (nvim-treesitter.withPlugins treesitterGrammars)
           nvim-web-devicons
+          orgmode
           plenary-nvim
           purescript-vim
           vim-colors-solarized

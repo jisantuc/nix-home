@@ -7,7 +7,8 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "nvim_lsp", max_item_count = 10 },
     { name = "treesitter", max_item_count = 10 },
-    { name = "luasnip" }
+    { name = "luasnip" },
+    { name = "orgmode" }
   }, { name = "buffer" }),
   mapping = cmp.mapping.preset.insert({
       ['<C-e>'] = cmp.mapping.abort(),
