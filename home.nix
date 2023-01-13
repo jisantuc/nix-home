@@ -108,6 +108,7 @@ in
           luasnip
           neogit
           nvim-cmp
+          nvim-jqx
           nvim-lspconfig
           nvim-metals
           nvim-tree-lua
