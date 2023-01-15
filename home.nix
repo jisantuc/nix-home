@@ -18,7 +18,7 @@ let
   systemUtilities = [
     pkgs.asciinema
     pkgs.htop
-    # pkgs.httpie
+    pkgs.httpie
     pkgs.imagemagick
     pkgs.wget
   ];
