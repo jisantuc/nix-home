@@ -18,7 +18,7 @@ let
   systemUtilities = [
     pkgs.asciinema
     pkgs.htop
-    # pkgs.httpie
+    pkgs.httpie
     pkgs.imagemagick
     pkgs.wget
   ];
@@ -108,6 +108,7 @@ in
           luasnip
           neogit
           nvim-cmp
+          nvim-jqx
           nvim-lspconfig
           nvim-metals
           nvim-tree-lua

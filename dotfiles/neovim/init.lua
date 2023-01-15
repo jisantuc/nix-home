@@ -7,6 +7,7 @@
 -- so they all hang out together in lsp-config.lua
 
 require("completion-config")
+require("custom-jq-config")
 require("custom-lsp-config")
 require("custom-orgmode")
 require("fzf-config")
