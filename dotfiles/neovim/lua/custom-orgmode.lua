@@ -1,6 +1,8 @@
 require("orgmode").setup({
   org_agenda_files = {"~/.org/agenda/*"},
   org_default_notes_file = "~/.org/refile.org",
+
+  win_split_mode = "vertical"
 })
 
 -- it's not clear to me whether this is actually doing anything.
