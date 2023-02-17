@@ -125,7 +125,7 @@ in
         fzf
         kotlin-language-server
         nodePackages.typescript-language-server
-        (python311.withPackages (ps: [
+        (python3.withPackages (ps: [
           ps.flake8
           ps.python-lsp-server
           ps.pylsp-mypy
