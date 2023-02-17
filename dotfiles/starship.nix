@@ -50,6 +50,7 @@
   ruby.format = "[$symbol]($style)";
   rust.format = "[$symbol]($style)";
   scala.format = "[$symbol]($style)";
+  scala.symbol = "🐚 ";
   swift.format = "[$symbol]($style)";
   vagrant.format = "[$symbol]($style)";
   vlang.format = "[$symbol]($style)";
