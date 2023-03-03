@@ -20,6 +20,7 @@ let
     pkgs.htop
     pkgs.httpie
     pkgs.imagemagick
+    pkgs.pandoc
     pkgs.wget
   ];
 
