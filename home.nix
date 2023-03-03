@@ -97,6 +97,7 @@ in
       plugins =
         with pkgs.vimPlugins;
         [
+          (nvim-treesitter.withPlugins treesitterGrammars)
           cmp-buffer
           cmp-nvim-lsp
           cmp-treesitter
@@ -112,13 +113,13 @@ in
           nvim-lspconfig
           nvim-metals
           nvim-tree-lua
-          (nvim-treesitter.withPlugins treesitterGrammars)
           nvim-web-devicons
           orgmode
           plenary-nvim
           purescript-vim
           vim-colors-solarized
           vim-nix
+          vimwiki
         ];
       extraPackages = with pkgs; [
         dhall-lsp-server
