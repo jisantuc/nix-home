@@ -125,6 +125,7 @@ in
         ];
       extraPackages = with pkgs; [
         dhall-lsp-server
+        discount # maybe not needed? try removing once template source location config is working
         fzf
         kotlin-language-server
         nodePackages.typescript-language-server
