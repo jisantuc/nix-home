@@ -121,6 +121,7 @@ in
           vim-colors-solarized
           vim-nix
           vimwiki
+          which-key-nvim
         ];
       extraPackages = with pkgs; [
         dhall-lsp-server
