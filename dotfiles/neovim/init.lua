@@ -1,5 +1,5 @@
 -- init.lua
--- this file shoul dhold only things that don't go with other things
+-- this file should hold only things that don't go with other things
 -- for instance, there's only one configuration that has to do with Markdown previewing --
 -- this wouldn't make sense to put in a markdown preview config, because there's nothinge else
 -- that would go there.
@@ -10,6 +10,8 @@ require("completion-config")
 require("custom-jq-config")
 require("custom-lsp-config")
 require("custom-orgmode")
+require("custom-vimwiki")
+require("custom-which-key")
 require("fzf-config")
 require("git-config")
 require("tree-config")
