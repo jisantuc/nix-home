@@ -2,31 +2,46 @@
 
 let
   shellUtilities = [
+    # visualize dot files with the dot command
+    # https://graphviz.org/
     pkgs.graphviz
+    # traverse json with the jq command
+    # https://stedolan.github.io/jq/
     pkgs.jq
+    # faster grep with rg
+    # https://github.com/BurntSushi/ripgrep
     pkgs.ripgrep
+    # view full file tree under cwd with tree
     pkgs.tree
-    pkgs.bash-completion
-  ];
-
-  jvmDeps = [
-    pkgs.ammonite
-    pkgs.coursier
-    (pkgs.sbt.override { jre = pkgs.openjdk11; })
   ];
 
   systemUtilities = [
+    # record terminal activity
+    # https://asciinema.org/
     pkgs.asciinema
+    # nicer view of system resource utilization
+    # https://htop.dev/
     pkgs.htop
+    # curl for humans
+    # https://httpie.io/
     pkgs.httpie
+    # all kinds of image utilities, mainly I use it for converting between formats
+    # https://imagemagick.org/index.php
     pkgs.imagemagick
+    # library-ization of the claim that all structured text is the same
+    # https://pandoc.org/
     pkgs.pandoc
-    pkgs.wget
+    # https://github.com/jaspervdj/patat
     pkgs.haskellPackages.patat
+    # also like upgraded curl but mainly useful for downloading files
+    # https://www.gnu.org/software/wget/
+    pkgs.wget
+    # presentations from the terminal
   ];
 
   # Packages I need because it'll be a nix-y system
   ourobouros = [
+    pkgs.bash-completion
     pkgs.nixpkgs-fmt
   ];
 
@@ -174,7 +189,6 @@ in
   home.packages =
     shellUtilities ++
     systemUtilities ++
-    jvmDeps ++
     ourobouros ++
     patchedFonts;
 }
