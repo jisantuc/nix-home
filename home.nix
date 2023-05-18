@@ -22,6 +22,7 @@ let
     pkgs.imagemagick
     pkgs.pandoc
     pkgs.wget
+    pkgs.haskellPackages.patat
   ];
 
   # Packages I need because it'll be a nix-y system

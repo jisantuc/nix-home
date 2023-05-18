@@ -15,10 +15,6 @@
       };
     in
     {
-      #      configFileLocation =
-      #        if builtins.currentSystem == "x86_64-darwin"
-      #        then "Library/Application Support/lazygit/config.yml"
-      #        else ".config/lazygit/config.yml";
       homeConfigurations = {
         linux = mkHome {
           system = "x86_64-linux";
