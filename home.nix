@@ -19,6 +19,9 @@ let
     # record terminal activity
     # https://asciinema.org/
     pkgs.asciinema
+    # transparent (to end-user) encrypt/decrypt of secrets in a git repository
+    # https://github.com/AGWA/git-crypt
+    pkgs.git-crypt
     # nicer view of system resource utilization
     # https://htop.dev/
     pkgs.htop
