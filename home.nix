@@ -51,6 +51,7 @@ let
   ];
 
   treesitterGrammars = (p: [
+    p.fish
     p.haskell
     p.java
     p.javascript
