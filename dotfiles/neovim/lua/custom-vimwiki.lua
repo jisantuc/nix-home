@@ -9,4 +9,4 @@ vim.api.nvim_set_keymap("n", "<leader>wc", "<cmd>VimwikiTOC<CR>", { noremap = tr
 -- absolute paths into my registered wikis
 -- the opened wiki will be a "temporary wiki" (see `:h vimwiki-temporary-wiki`) but that's ok,
 -- everything will still work within the nvim session
-vim.api.nvim_set_keymap("n", "<leader>wh", "<cmd>:e .wiki/index.wiki<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>w.", "<cmd>:e .wiki/index.wiki<CR>", { noremap = true })
