@@ -54,17 +54,8 @@ require("lspconfig").dhall_lsp_server.setup{}
 -- activate kotlin ls
 require("lspconfig").kotlin_language_server.setup({})
 
--- activate python-language-server
-require("lspconfig").pylsp.setup({
-  pylsp = {
-    plugins = {
-      flake8 = {
-        enabled = true;
-      }
-    }
-  }
-})
-
+-- activate pyright
+require("lspconfig").pyright.setup{}
 
 -- configure lsp keybindings
 vim.api.nvim_set_keymap(
