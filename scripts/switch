@@ -10,11 +10,15 @@ Build and switch to a new home manager generation
 }
 
 function build_linux() {
-  nix build --impure .#homeConfigurations.linux.activationPackage
+  nix build --impure .#homeConfigurations.x86_64-linux.activationPackage
 }
 
-function build_macos() {
-  nix build --impure .#homeConfigurations.macOS.activationPackage
+function build_macos_arm() {
+  nix build --impure .#homeConfigurations.aarch64-darwin.activationPackage
+}
+
+function build_macos_x86() {
+  nix build --impure .#homeConfigurations.x86_64-darwin.activationPackage
 }
 
 function activate_home() {
@@ -26,8 +30,12 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
     usage
   else
     case "${1}" in
-      linux) build_linux;;
-      macos) build_macos;;
+      linux-x86) build_linux;;
+      macos-arm) build_macos_arm;;
+      macos-x86) build_macos_x86;;
+      *)
+              echo "${1} did not match any available options"
+              exit 1;
     esac
 
     activate_home
