@@ -21,6 +21,7 @@ with vimPlugins;
   orgmode
   plenary-nvim
   purescript-vim
+  rest-nvim
   vim-colors-solarized
   vim-nix
   vimwiki
