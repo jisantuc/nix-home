@@ -53,25 +53,9 @@ let
     (pkgs.nerdfonts.override { fonts = [ "Hasklig" "SourceCodePro" ]; })
   ];
 
-  treesitterGrammars = (p: [
-    p.fish
-    p.haskell
-    p.java
-    p.javascript
-    p.json
-    p.kotlin
-    p.markdown
-    p.markdown-inline
-    p.nix
-    p.org
-    p.python
-    p.scala
-    p.sql
-    p.tsx
-    p.typescript
-    p.vim
-    p.yaml
-  ]);
+  treesitterGrammars = (p:
+    (import attrs/treesitterGrammars.nix) { inherit p; }
+  );
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -115,34 +99,11 @@ in
       viAlias = true;
       vimAlias = true;
 
-      plugins =
-        with pkgs.vimPlugins;
-        [
-          (nvim-treesitter.withPlugins treesitterGrammars)
-          cmp-buffer
-          cmp-nvim-lsp
-          cmp-treesitter
-          dhall-vim
-          fzf-lua
-          git-blame-nvim
-          haskell-tools-nvim
-          lazygit-nvim
-          luasnip
-          neogit
-          nvim-cmp
-          nvim-jqx
-          nvim-lspconfig
-          nvim-metals
-          nvim-tree-lua
-          nvim-web-devicons
-          orgmode
-          plenary-nvim
-          purescript-vim
-          vim-colors-solarized
-          vim-nix
-          vimwiki
-          which-key-nvim
-        ];
+      plugins = (import ./attrs/vimPlugins.nix) {
+        vimPlugins = pkgs.vimPlugins;
+        inherit treesitterGrammars;
+      };
+
       extraPackages = with pkgs; [
         dhall-lsp-server
         discount # maybe not needed? try removing once template source location config is working
