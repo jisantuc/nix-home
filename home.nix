@@ -60,7 +60,7 @@ in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "james";
+  home.username = builtins.getEnv "USER";
   home.homeDirectory = builtins.getEnv "HOME";
 
   # This value determines the Home Manager release that your
@@ -71,7 +71,7 @@ in
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "22.11";
+  home.stateVersion = "23.05";
 
   xdg.configFile.nvim = {
     source = ./dotfiles/neovim;
