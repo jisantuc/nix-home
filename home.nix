@@ -60,7 +60,7 @@ in
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "james";
+  home.username = builtins.getEnv "USER";
   home.homeDirectory = builtins.getEnv "HOME";
 
   # This value determines the Home Manager release that your
