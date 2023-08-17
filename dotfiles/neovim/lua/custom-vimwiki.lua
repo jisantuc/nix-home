@@ -3,7 +3,7 @@ vim.api.nvim_set_keymap("n", "<leader>wlb", "<cmd>VimwikiBacklinks<CR>", { norem
 -- confirm all links in this wiki are reachable
 vim.api.nvim_set_keymap("n", "<leader>wlc", "<cmd>VimwikiCheckLinks<CR>", { noremap = true })
 -- generate a table of contents
-vim.api.nvim_set_keymap("n", "<leader>wc", "<cmd>VimwikiTOC<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<leader>wo", "<cmd>VimwikiTOC<CR>", { noremap = true })
 -- open local wiki index file -- "wiki here"
 -- this is a workaround for lack of discovery in vimwiki and my personal desire not to write
 -- absolute paths into my registered wikis
