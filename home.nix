@@ -101,7 +101,7 @@ in
 
       plugins = (import ./attrs/vimPlugins.nix) {
         vimPlugins = pkgs.vimPlugins;
-        inherit treesitterGrammars;
+        inherit pkgs treesitterGrammars;
       };
 
       extraPackages = with pkgs; [
