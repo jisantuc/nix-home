@@ -13,4 +13,5 @@ vim.api.nvim_set_keymap("n", "<space>fg", "<cmd>:FzfLua git_files<CR>", { norema
 vim.api.nvim_set_keymap("n", "<space>flds", "<cmd>:FzfLua lsp_document_symbols<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<space>flws", "<cmd>:FzfLua lsp_workspace_symbols<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<space>fs", "<cmd>:FzfLua grep_project<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<space>fw", ":lua require('fzf-lua').live_grep({cwd='~/vimwiki'})<CR>", { noremap = true })
 
