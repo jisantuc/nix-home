@@ -109,9 +109,9 @@ in
         discount # maybe not needed? try removing once template source location config is working
         fzf
         kotlin-language-server
+        nil
         nodePackages.typescript-language-server
         pyright
-        rnix-lsp
       ];
 
     };
