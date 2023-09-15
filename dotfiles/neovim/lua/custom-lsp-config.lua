@@ -31,7 +31,6 @@ require("lspconfig").tsserver.setup{}
 
 -- activate hls
 local ht = require('haskell-tools')
-local def_opts = { noremap = true, silent = true, }
 ht.setup {
   tools = {
     hover = {
