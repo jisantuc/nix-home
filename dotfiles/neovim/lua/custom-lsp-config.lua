@@ -21,7 +21,7 @@ metals_config.init_options.statusBarProvider = "on"
 metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- activate rnix-lsp
-require("lspconfig").rnix.setup{}
+require'lspconfig'.nil_ls.setup{}
 
 -- activate purescript ls
 require("lspconfig").purescriptls.setup{}
@@ -31,7 +31,6 @@ require("lspconfig").tsserver.setup{}
 
 -- activate hls
 local ht = require('haskell-tools')
-local def_opts = { noremap = true, silent = true, }
 ht.setup {
   tools = {
     hover = {
