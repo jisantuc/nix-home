@@ -108,6 +108,7 @@ in
         dhall-lsp-server
         fzf
         kotlin-language-server
+        lua-language-server
         nil
         nodePackages.typescript-language-server
         pyright
