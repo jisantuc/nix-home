@@ -23,7 +23,7 @@ jobs:
       run: brew install git-crypt
     - name: Unlock repository
       run: |
-        echo ${{ secrets.GIT_CRYPT_SECRET_KEY }} | base64 --decode | git-crypt unlock -
+        echo "${{ secrets.GIT_CRYPT_SECRET_KEY }}" | base64 --decode | git-crypt unlock -
     - uses: cachix/install-nix-action@v22
       with:
         extra_nix_config: |
