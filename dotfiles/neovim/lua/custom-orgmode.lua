@@ -1,10 +1,10 @@
 require("orgmode").setup({
-  org_agenda_files = {"~/.org/agenda/*"},
-  org_default_notes_file = "~/.org/refile.org",
+        org_agenda_files = { "~/.org/agenda/*" },
+        org_default_notes_file = "~/.org/refile.org",
 
-  win_split_mode = "vertical",
+        win_split_mode = "vertical",
 
-  org_todo_keywords = {'TODO', 'BLOCKED', '|', 'DONE', 'DELEGATED'}
+        org_todo_keywords = { 'TODO', 'BLOCKED', '|', 'DONE', 'DELEGATED' }
 })
 
 -- it's not clear to me whether this is actually doing anything.

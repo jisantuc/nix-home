@@ -1,11 +1,10 @@
 -- toggle conceal level between 0 and 2
 -- 0 conceals nothing, 2 makes links concealed
-
-function conceal()
+local function conceal()
         vim.opt.conceallevel = 2
 end
 
-function noconceal()
+local function noconceal()
         vim.opt.conceallevel = 0
 end
 
