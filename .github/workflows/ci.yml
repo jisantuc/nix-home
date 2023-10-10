@@ -15,6 +15,11 @@ jobs:
         os: [macos-latest, ubuntu-latest]
     steps:
     - uses: actions/checkout@v2.4.0
+    # I install git-crypt into the home environment, so it'll be available once
+    # the test script runs, _but_ for the test script to run I have to be able to
+    # decrypt secrets.nix, which requires git-crypt.
+    # So here only, and anywhere I need to run this in the future, I one-off install
+    # git-crypt ahead of time, and use it in the next step to unlock the repo.
     - name: Install git-crypt for linux
       if: ${{ matrix.os == 'ubuntu-latest' }}
       run: sudo apt-get install -y git-crypt
