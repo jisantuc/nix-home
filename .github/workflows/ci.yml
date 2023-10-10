@@ -20,7 +20,7 @@ jobs:
         GIT_CRYPT_KEY: ${{ secrets.GIT_CRYPT_SECRET_KEY }}
     - name: Install git-crypt for linux
       if: ${{ matrix.os == 'ubuntu-latest' }}
-      run: apt-get install -y git-crypt
+      run: sudo apt-get install -y git-crypt
     - name: Install git-crypt for mac
       if: ${{ matrix.os == 'macos-latest' }}
       run: brew install git-crypt
