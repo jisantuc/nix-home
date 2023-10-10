@@ -14,7 +14,7 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest]
     steps:
-    - uses: actions/checkout@v2.4.0
+    - uses: actions/checkout@v4.1.0
     # I install git-crypt into the home environment, so it'll be available once
     # the test script runs, _but_ for the test script to run I have to be able to
     # decrypt secrets.nix, which requires git-crypt.
