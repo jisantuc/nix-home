@@ -1,5 +1,4 @@
-# someday, but not yet
-# source $HOME/.config/fish/secrets.fish
+source $HOME/.config/fish/secrets.fish
 
 alias show-ip "ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
 

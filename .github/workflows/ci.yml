@@ -14,7 +14,21 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest]
     steps:
-    - uses: actions/checkout@v2.4.0
+    - uses: actions/checkout@v4.1.0
+    # I install git-crypt into the home environment, so it'll be available once
+    # the test script runs, _but_ for the test script to run I have to be able to
+    # decrypt secrets.nix, which requires git-crypt.
+    # So here only, and anywhere I need to run this in the future, I one-off install
+    # git-crypt ahead of time, and use it in the next step to unlock the repo.
+    - name: Install git-crypt for linux
+      if: ${{ matrix.os == 'ubuntu-latest' }}
+      run: sudo apt-get install -y git-crypt
+    - name: Install git-crypt for mac
+      if: ${{ matrix.os == 'macos-latest' }}
+      run: brew install git-crypt
+    - name: Unlock repository
+      run: |
+        echo "${{ secrets.GIT_CRYPT_SECRET_KEY }}" | base64 --decode | git-crypt unlock -
     - uses: cachix/install-nix-action@v22
       with:
         extra_nix_config: |
