@@ -86,7 +86,7 @@ in
   };
 
   xdg.configFile."fish/secrets.fish".text = ''
-  set -gx CACHIX_AUTH_TOKEN ${secrets.cachixToken}
+    set -gx CACHIX_AUTH_TOKEN ${secrets.cachixToken}
   '';
 
   xdg.configFile."lazygit/config.yml".text = builtins.readFile ./dotfiles/lazygit.yml;
