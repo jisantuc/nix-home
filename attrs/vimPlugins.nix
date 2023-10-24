@@ -23,13 +23,11 @@ with vimPlugins;
   haskell-tools-nvim
   lazygit-nvim
   luasnip
-  neogit
   nvim-cmp
   nvim-dap
   nvim-dap-ui
   nvim-dap-virtual-text
   nvim-dap-python
-  nvim-jqx
   nvim-lspconfig
   nvim-metals
   nvim-tree-lua
