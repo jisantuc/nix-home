@@ -51,7 +51,6 @@ let
   ];
 
   patchedFonts = [
-    # need the parens because otherwise the space makes it look like list entries
     (pkgs.nerdfonts.override { fonts = [ "Hasklig" "SourceCodePro" ]; })
   ];
 
