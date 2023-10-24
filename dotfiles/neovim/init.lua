@@ -8,7 +8,6 @@
 
 require("completion-config")
 require("custom-dap-config")
-require("custom-jq-config")
 require("custom-lsp-config")
 require("custom-orgmode")
 require("custom-rest-nvim")
