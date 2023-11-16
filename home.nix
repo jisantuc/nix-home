@@ -90,6 +90,11 @@ in
 
   xdg.configFile."lazygit/config.yml".text = builtins.readFile ./dotfiles/lazygit.yml;
 
+  xdg.configFile."direnv/lib" = {
+    source = ./dotfiles/direnv/lib;
+    recursive = true;
+  };
+
   programs = {
 
     # Let Home Manager install and manage itself.
