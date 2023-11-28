@@ -3,6 +3,8 @@ vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>!black %<CR>", { noremap = true 
 
 require("dap-python").setup("python")
 
+require("dap-python").test_runner = "pytest"
+
 vim.api.nvim_set_keymap("n",
         "<leader>cdb",
         "<cmd>lua require('dap').toggle_breakpoint()<CR>",
@@ -16,6 +18,10 @@ vim.api.nvim_set_keymap("n",
         "<cmd>lua require('dap').repl.open()<CR>",
         { noremap = true })
 vim.api.nvim_set_keymap("n",
-        "<leader>cdt",
+        "<leader>cdtm",
         "<cmd>lua require('dap-python').test_method()<CR>",
+        { noremap = true })
+vim.api.nvim_set_keymap("n",
+        "<leader>cdtc",
+        "<cmd>lua require('dap-python').test_class()<CR>",
         { noremap = true })
