@@ -122,6 +122,7 @@ in
         nil
         nodePackages.typescript-language-server
         pyright
+        terraform-ls
       ];
 
     };
