@@ -17,6 +17,7 @@
   p.python
   p.scala
   p.sql
+  p.terraform
   p.tsx
   p.typescript
   p.vim

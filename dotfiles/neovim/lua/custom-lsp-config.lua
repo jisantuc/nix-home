@@ -20,6 +20,9 @@ metals_config.init_options.statusBarProvider = "on"
 
 metals_config.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+-- activate terraform-ls
+require("lspconfig").terraformls.setup {}
+
 -- activate nil_ls
 require("lspconfig").nil_ls.setup {
         settings = {
