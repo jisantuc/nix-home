@@ -13,9 +13,10 @@ require("nvim-tree").setup({
 
 -- tree view mappings
 -- launch it
-vim.api.nvim_set_keymap("n", "<space>tt", "<cmd>:NvimTreeToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<space>tt", "<cmd>:NvimTreeToggle<CR>", { noremap = true, desc = "Toggle file tree" })
 -- find file
-vim.api.nvim_set_keymap("n", "<space>tf", "<cmd>:NvimTreeFindFile<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<space>tf", "<cmd>:NvimTreeFindFile<CR>",
+        { noremap = true, desc = "Find buffer file in file tree" })
 
 require("nvim-web-devicons").setup {
         color_icons = true,

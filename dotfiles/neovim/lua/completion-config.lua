@@ -11,7 +11,7 @@ cmp.setup({
                 { name = "orgmode" }
         }, { name = "buffer" }),
         mapping = cmp.mapping.preset.insert({
-                ['<C-e>'] = cmp.mapping.abort(),
+                ['<C-g>'] = cmp.mapping.abort(),
                 ['<CR>'] = cmp.mapping.confirm({ select = true })
         })
 })

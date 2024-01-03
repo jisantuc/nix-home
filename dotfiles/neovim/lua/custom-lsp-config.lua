@@ -53,11 +53,7 @@ require("lspconfig").lua_ls.setup {
                                                 checkThirdParty = false,
                                                 library = {
                                                         vim.env.VIMRUNTIME
-                                                        -- "${3rd}/luv/library"
-                                                        -- "${3rd}/busted/library",
                                                 }
-                                                -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
-                                                -- library = vim.api.nvim_get_runtime_file("", true)
                                         }
                                 }
                         })
@@ -84,7 +80,6 @@ ht.setup {
                 }
         },
         hls = {
-                -- See nvim-lspconfig's  suggested configuration for keymaps, etc.
                 settings = {
                         haskell = {
                                 formattingProvider = 'ormolu',
@@ -104,24 +99,32 @@ require("lspconfig").pyright.setup {}
 
 -- configure lsp keybindings
 vim.api.nvim_set_keymap(
-        "n",                                     -- mode
-        "gd",                                    -- key chord
-        "<cmd>lua vim.lsp.buf.definition()<CR>", -- command to execute
-        { noremap = true }                       -- some options, I don"t know what I can do here
+        "n",                                          -- mode
+        "gd",                                         -- key chord
+        "<cmd>lua vim.lsp.buf.definition()<CR>",      -- command to execute
+        { noremap = true, desc = "Go to definition" } -- some options, I don"t know what I can do here
 )
 
-vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "gds", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "gws", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>cl", "<cmd>lua vim.lsp.codelens.run()<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<leader>aa", "<cmd>lua vim.diagnostic.setqflist()<CR>", { noremap = true }) -- all workspace diagnostics
+vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, desc = "Show hint at point" })
+vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>",
+        { noremap = true, desc = "Go to implementation" })
+vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, desc = "Go to references" })
+vim.api.nvim_set_keymap("n", "gds", "<cmd>lua vim.lsp.buf.document_symbol()<CR>",
+        { noremap = true, desc = "Go to document symbol" })
+vim.api.nvim_set_keymap("n", "gws", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>",
+        { noremap = true, desc = "Go to workspace symbol" })
+vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>",
+        { noremap = true, desc = "Rename symbol" })
+vim.api.nvim_set_keymap("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format { async = true }<CR>",
+        { noremap = true, desc = "Format buffer" })
+vim.api.nvim_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>",
+        { noremap = true, desc = "Code action" })
+vim.api.nvim_set_keymap("n", "<leader>cl", "<cmd>lua vim.lsp.codelens.run()<CR>", { noremap = true, desc = "Code lens" })
+vim.api.nvim_set_keymap("n", "<leader>aa", "<cmd>lua vim.diagnostic.setqflist()<CR>",
+        { noremap = true, desc = "Show all diagnostics" })
 vim.api.nvim_set_keymap("n", "<leader>ae", "<cmd>lua vim.diagnostic.setqflist({severity = \"E\"})<CR>",
-        { noremap = true })                                                                               -- all workspace errors
+        { noremap = true, desc = "Show error diagnostics" })
 vim.api.nvim_set_keymap("n", "<leader>aw", "<cmd>lua vim.diagnostic.setqflist({severity = \"W\"})<CR>",
-        { noremap = true })                                                                               -- all workspace warnings
-vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.setloclist()<CR>", { noremap = true }) -- buffer diagnostics only
+        { noremap = true, desc = "Show warning diagnostics" })
+vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.setloclist()<CR>",
+        { noremap = true, desc = "Show buffer diagnostics" })
