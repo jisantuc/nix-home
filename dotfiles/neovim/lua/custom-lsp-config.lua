@@ -72,21 +72,7 @@ require("lspconfig").purescriptls.setup {}
 require("lspconfig").tsserver.setup {}
 
 -- activate hls
-local ht = require('haskell-tools')
-ht.setup {
-        tools = {
-                hover = {
-                        disable = true,
-                }
-        },
-        hls = {
-                settings = {
-                        haskell = {
-                                formattingProvider = 'ormolu',
-                        }
-                }
-        },
-}
+require('haskell-tools')
 
 -- activate dhall ls
 require("lspconfig").dhall_lsp_server.setup {}
