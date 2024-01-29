@@ -1,6 +1,6 @@
 { pkgs, vimPlugins, treesitterGrammars, ... }:
 let
-  calendarPlugin = pkgs.vimUtils.buildVimPluginFrom2Nix {
+  calendarPlugin = pkgs.vimUtils.buildVimPlugin {
     name = "calendar-vim";
     src = pkgs.fetchFromGitHub {
       owner = "mattn";
