@@ -23,6 +23,7 @@ with vimPlugins;
   haskell-tools-nvim
   lazygit-nvim
   luasnip
+  markdown-preview-nvim
   nvim-cmp
   nvim-dap
   nvim-dap-ui
