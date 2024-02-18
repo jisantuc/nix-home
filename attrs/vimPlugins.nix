@@ -9,6 +9,15 @@ let
       hash = "sha256-uOiKzhl+3Pi0pFLecQqUWveN+1Z3Tu/UiSPBmS+bio8=";
     };
   };
+  siliconPlugin = pkgs.vimUtils.buildVimPlugin {
+    name = "vim-silicon";
+    src = pkgs.fetchFromGitHub {
+      owner = "segeljakt";
+      repo = "vim-silicon";
+      rev = "4a93122ae2139a12e2a56f064d086c05160b6835";
+      hash = "sha256-8pCHtApD/xXav2UBVOVhkaHg3YS4aNCZ73mog04bYuA=";
+    };
+  };
 in
 with vimPlugins;
 [
@@ -36,6 +45,7 @@ with vimPlugins;
   orgmode
   plenary-nvim
   purescript-vim
+  siliconPlugin
   rest-nvim
   vim-colors-solarized
   vim-nix
