@@ -10,6 +10,7 @@
   p.javascript
   p.json
   p.kotlin
+  p.lua
   p.markdown
   p.markdown-inline
   p.nix
