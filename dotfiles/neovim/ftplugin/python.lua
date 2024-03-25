@@ -1,9 +1,15 @@
 -- add special way to run black, since pyright doesn't have a code format option
 vim.api.nvim_set_keymap("n", "<leader>f", "<cmd>!black %<CR>", { noremap = true, desc = "Run black on buffer" })
 
-require("dap-python").setup("python")
+local dap_python = require("dap-python")
 
-require("dap-python").test_runner = "pytest"
+dap_python.setup("python")
+dap_python.test_runner = "pytest_no_cov"
+function dap_python.test_runners.pytest_no_cov(classname, methodname)
+        local test_module, test_args = dap_python.test_runners.pytest(classname, methodname)
+        test_args[#test_args + 1] = "--no-cov"
+        return test_module, test_args
+end
 
 vim.api.nvim_set_keymap("n",
         "<leader>cdb",
