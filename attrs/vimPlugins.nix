@@ -42,12 +42,13 @@ with vimPlugins;
   nvim-metals
   nvim-tree-lua
   nvim-web-devicons
-  orgmode
   plenary-nvim
   purescript-vim
   siliconPlugin
   rest-nvim
+  tabular
   vim-colors-solarized
+  vim-markdown
   vim-nix
   vimwiki
   which-key-nvim
