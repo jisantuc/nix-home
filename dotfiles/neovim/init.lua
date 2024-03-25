@@ -9,7 +9,6 @@
 require("completion-config")
 require("custom-dap-config")
 require("custom-lsp-config")
-require("custom-orgmode")
 require("custom-rest-nvim")
 require("custom-vimwiki")
 require("custom-which-key")
