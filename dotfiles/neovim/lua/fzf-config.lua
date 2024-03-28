@@ -10,7 +10,7 @@ vim.opt.wildignore:append "**/target/*"
 vim.opt.wildignore:append "**/.bsp/*"
 vim.opt.wildignore:append "**/.metals/*"
 vim.api.nvim_set_keymap("n", "<space>fb", "<cmd>:FzfLua buffers<CR>", { noremap = true, desc = "Choose open buffer" })
-vim.api.nvim_set_keymap("n", "<space>fl", "<cmd>:FzfLua lines<CR>", { noremap = true, desc = "Choose file in workspace" })
+vim.api.nvim_set_keymap("n", "<space>fL", "<cmd>:FzfLua lines<CR>", { noremap = true, desc = "Choose file in workspace" })
 vim.api.nvim_set_keymap("n", "<space>ff", "<cmd>:FzfLua files<CR>", { noremap = true, desc = "Choose file in workspace" })
 vim.api.nvim_set_keymap("n", "<space>fg", "<cmd>:FzfLua git_files<CR>", { noremap = true, desc = "Choose git file" })
 vim.api.nvim_set_keymap("n", "<space>fs", "<cmd>:FzfLua grep_project<CR>",
