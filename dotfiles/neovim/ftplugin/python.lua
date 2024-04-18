@@ -8,6 +8,8 @@ dap_python.test_runner = "pytest_no_cov"
 function dap_python.test_runners.pytest_no_cov(classname, methodname)
         local test_module, test_args = dap_python.test_runners.pytest(classname, methodname)
         test_args[#test_args + 1] = "--no-cov"
+        test_args[#test_args + 1] = "-n"
+        test_args[#test_args + 1] = "0"
         return test_module, test_args
 end
 
