@@ -88,8 +88,6 @@ in
     set -gx CACHIX_AUTH_TOKEN ${secrets.cachixToken}
   '';
 
-  xdg.configFile."lazygit/config.yml".text = builtins.readFile ./dotfiles/lazygit.yml;
-
   xdg.configFile."direnv/lib" = {
     source = ./dotfiles/direnv/lib;
     recursive = true;
@@ -102,6 +100,17 @@ in
 
     lazygit = {
       enable = true;
+      settings = {
+        os = {
+          editPreset = "nvim-remote";
+        };
+        gui = {
+          nerdFontsVersion = "3";
+          theme = {
+            lightTheme = true;
+          };
+        };
+      };
     };
 
     neovim = {
