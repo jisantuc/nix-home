@@ -101,9 +101,6 @@ in
     lazygit = {
       enable = true;
       settings = {
-        os = {
-          editPreset = "nvim-remote";
-        };
         gui = {
           nerdFontsVersion = "3";
           theme = {
