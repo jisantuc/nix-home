@@ -1,11 +1,8 @@
 source $HOME/.config/fish/secrets.fish
-
-alias show-ip "ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
+bass source $HOME/.config/fish/use-nix.sh
 
 export PATH="/usr/local/bin:$PATH"
 export EDITOR=vi
-
-bass source $HOME/.config/fish/use-nix.sh
 
 starship init fish | source
 
