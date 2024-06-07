@@ -120,9 +120,12 @@ in
         inherit pkgs treesitterGrammars;
       };
 
-      extraLuaPackages = (ps: [
-        ps.lua-curl
-      ]);
+      extraLuaPackages = (ps:
+        [
+          ps.lua-curl
+          ps.mimetypes
+          ps.xml2lua
+        ]);
       extraPackages = with pkgs;
         [
           dhall-lsp-server
