@@ -22,5 +22,6 @@
   p.tsx
   p.typescript
   p.vim
+  p.vimdoc
   p.yaml
 ]

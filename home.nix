@@ -88,8 +88,6 @@ in
     set -gx CACHIX_AUTH_TOKEN ${secrets.cachixToken}
   '';
 
-  xdg.configFile."lazygit/config.yml".text = builtins.readFile ./dotfiles/lazygit.yml;
-
   xdg.configFile."direnv/lib" = {
     source = ./dotfiles/direnv/lib;
     recursive = true;
@@ -102,6 +100,14 @@ in
 
     lazygit = {
       enable = true;
+      settings = {
+        gui = {
+          nerdFontsVersion = "3";
+          theme = {
+            lightTheme = true;
+          };
+        };
+      };
     };
 
     neovim = {
@@ -114,18 +120,23 @@ in
         inherit pkgs treesitterGrammars;
       };
 
-      extraPackages = with pkgs; [
-        dhall-lsp-server
-        fzf
-        kotlin-language-server
-        lua-language-server
-        nil
-        nodePackages.typescript-language-server
-        pyright
-        silicon
-        terraform-ls
-      ];
-
+      extraLuaPackages = (ps:
+        [
+          ps.lua-curl
+          ps.mimetypes
+          ps.xml2lua
+        ]);
+      extraPackages = with pkgs;
+        [
+          dhall-lsp-server
+          fzf
+          lua-language-server
+          nil
+          nodePackages.typescript-language-server
+          pyright
+          silicon
+          terraform-ls
+        ];
     };
 
     direnv = {
