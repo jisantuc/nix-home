@@ -120,18 +120,20 @@ in
         inherit pkgs treesitterGrammars;
       };
 
-      extraPackages = with pkgs; [
-        dhall-lsp-server
-        fzf
-        kotlin-language-server
-        lua-language-server
-        nil
-        nodePackages.typescript-language-server
-        pyright
-        silicon
-        terraform-ls
-      ];
-
+      extraLuaPackages = (ps: [
+        ps.lua-curl
+      ]);
+      extraPackages = with pkgs;
+        [
+          dhall-lsp-server
+          fzf
+          lua-language-server
+          nil
+          nodePackages.typescript-language-server
+          pyright
+          silicon
+          terraform-ls
+        ];
     };
 
     direnv = {

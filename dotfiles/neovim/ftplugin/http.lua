@@ -1,23 +1,9 @@
--- keymappings
-
-local restNvim = require('rest-nvim')
-
-local function selectEnv(envFile)
-        restNvim.select_env(envFile)
-end
-
-vim.api.nvim_create_user_command(
-        "HttpSelectEnv",
-        function(opts) selectEnv(opts.fargs[1] .. ".env") end,
-        { nargs = 1 }
-)
-
--- -- run the command in this file
-vim.api.nvim_set_keymap("n", "<leader>hel", "<cmd>:HttpSelectEnv local<CR>",
+-- run the command in this file
+vim.api.nvim_set_keymap("n", "<leader>hel", "<cmd>:Rest env set local.env<CR>",
         { noremap = true, desc = "Use local .env file for rest-nvim" })
-vim.api.nvim_set_keymap("n", "<leader>het", "<cmd>:HttpSelectEnv test<CR>",
+vim.api.nvim_set_keymap("n", "<leader>het", "<cmd>:Rest env set test.env<CR>",
         { noremap = true, desc = "Use test .env file for rest-nvim" })
-vim.api.nvim_set_keymap("n", "<leader>hep", "<cmd>:HttpSelectEnv prod<CR>",
+vim.api.nvim_set_keymap("n", "<leader>hep", "<cmd>:Rest env set prod.env<CR>",
         { noremap = true, desc = "Use prod .env file for rest-nvim" })
-vim.api.nvim_set_keymap("n", "<leader>hs", ":lua require('rest-nvim').run()<CR>",
+vim.api.nvim_set_keymap("n", "<leader>hs", "<cmd>:Rest run<CR>",
         { noremap = true, desc = "Send http request" })

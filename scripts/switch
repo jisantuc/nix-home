@@ -22,13 +22,14 @@ function build_macos_x86() {
 }
 
 function activate_home() {
-  nix develop nixpkgs#bash --command ./result/activate
+  nix run nixpkgs#bash -- ./result/activate
 }
 
 if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
   if [ "${1:-}" = "--help" ]; then
     usage
   else
+    echo "Building home derivation"
     case "${1}" in
       linux-x86) build_linux;;
       macos-arm) build_macos_arm;;
@@ -38,6 +39,7 @@ if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
               exit 1;
     esac
 
+    echo "Activating home"
     activate_home
   fi
 fi
