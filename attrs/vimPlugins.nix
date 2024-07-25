@@ -18,6 +18,15 @@ let
       hash = "sha256-8pCHtApD/xXav2UBVOVhkaHg3YS4aNCZ73mog04bYuA=";
     };
   };
+  markdownNvimPlugin = pkgs.vimUtils.buildVimPlugin {
+    name = "markdown.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "MeanderingProgrammer";
+      repo = "markdown.nvim";
+      rev = "87b9fda112cc72d14a4fac3cf1f1c1e65d0f4852";
+      hash = "sha256-zV97e+at7tEi7d4QP226uYnHf49p7fKXM3BDk8Mu+NE=";
+    };
+  };
 in
 with vimPlugins;
 [
@@ -33,6 +42,7 @@ with vimPlugins;
   lazygit-nvim
   luasnip
   markdown-preview-nvim
+  markdownNvimPlugin
   nvim-cmp
   nvim-dap
   nvim-dap-ui
@@ -48,7 +58,6 @@ with vimPlugins;
   rest-nvim
   tabular
   vim-colors-solarized
-  vim-markdown
   vim-nix
   vimwiki
   which-key-nvim

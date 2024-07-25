@@ -134,6 +134,7 @@ in
           nil
           nodePackages.typescript-language-server
           pyright
+          python3Packages.pylatexenc
           silicon
           terraform-ls
         ];
