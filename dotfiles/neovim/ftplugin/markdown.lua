@@ -1,4 +1,3 @@
-vim.g.vim_markdown_folding_level = 2
 vim.opt.colorcolumn = "120"
 
 require('render-markdown').setup({
@@ -309,3 +308,6 @@ require('render-markdown').setup({
         -- See 'Custom Handlers' document for more info
         custom_handlers = {},
 })
+
+vim.opt_local.foldmethod = "expr"
+vim.opt_local.foldexpr = "nvim_treesitter#foldexpr()"
