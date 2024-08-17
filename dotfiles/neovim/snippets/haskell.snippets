@@ -1,0 +1,7 @@
+snippet new-spec
+	import Test.Hspec (Spec, describe, it, shouldBe)
+	
+	spec :: Spec
+	spec = describe "${TM_FILENAME_BASE}" $ do
+	  it "behaves" $
+	    True \`shouldBe\` True

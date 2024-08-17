@@ -5,6 +5,3 @@ vim.api.nvim_set_keymap("n", "<leader>wlc", "<cmd>VimwikiCheckLinks<CR>", { nore
 -- generate a table of contents
 vim.api.nvim_set_keymap("n", "<leader>wo", "<cmd>VimwikiTOC<CR>",
         { noremap = true, desc = "Insert or update table of contents" })
--- Insert the current date
-vim.keymap.set("n", "<leader>wD", ":put =strftime('# %Y-%m-%d')<CR>db",
-        { noremap = true, desc = "Insert current date" })

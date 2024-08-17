@@ -33,6 +33,7 @@ with vimPlugins;
   (nvim-treesitter.withPlugins treesitterGrammars)
   calendarPlugin
   cmp-buffer
+  cmp_luasnip
   cmp-nvim-lsp
   cmp-treesitter
   dhall-vim
