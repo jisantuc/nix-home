@@ -9,6 +9,7 @@
 require("completion-config")
 require("custom-dap-config")
 require("custom-lsp-config")
+require("custom-luasnip")
 require("custom-rest-nvim")
 require("custom-treesitter")
 require("custom-vimwiki")
