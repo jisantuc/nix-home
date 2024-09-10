@@ -44,6 +44,8 @@ with vimPlugins;
   luasnip
   markdown-preview-nvim
   markdownNvimPlugin
+  neotest
+  neotest-haskell
   nvim-cmp
   nvim-dap
   nvim-dap-ui
