@@ -7,6 +7,12 @@ vim.api.nvim_set_keymap("n", "<leader>tt",
 vim.api.nvim_set_keymap("n", "<leader>tf",
         "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>",
         { noremap = true, desc = "Run all tests in file" })
-vim.api.nvim_set_keymap("n", "<leader>to",
-        "<cmd>lua require('neotest').output.open({enter=true, last_run=true})<CR>",
-        { noremap = true, desc = "Open last test output" })
+vim.api.nvim_set_keymap("n", "<leader>tot",
+        "<cmd>lua require('neotest').output_panel.toggle()<CR>",
+        { noremap = true, desc = "Toggle test output pane" })
+vim.api.nvim_set_keymap("n", "<leader>toc",
+        "<cmd>lua require('neotest').output_panel.clear()<CR>",
+        { noremap = true, desc = "Clear test output pane" })
+vim.api.nvim_set_keymap("n", "<leader>ts",
+        "<cmd>lua require('neotest').summary.toggle()<CR>",
+        { noremap = true, desc = "Toggle test summary pane" })
