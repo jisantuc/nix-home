@@ -46,6 +46,7 @@ with vimPlugins;
   markdownNvimPlugin
   neotest
   neotest-haskell
+  neotest-python
   nvim-cmp
   nvim-dap
   nvim-dap-ui
