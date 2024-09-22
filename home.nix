@@ -10,6 +10,9 @@ let
     # traverse json with the jq command
     # https://stedolan.github.io/jq/
     pkgs.jq
+    # make it so terminals can print images nicely, maybe
+    # https://saitoha.github.io/libsixel/
+    pkgs.libsixel
     # faster grep with rg
     # https://github.com/BurntSushi/ripgrep
     pkgs.ripgrep
