@@ -22,6 +22,18 @@ vim.api.nvim_set_keymap("n",
         "<cmd>lua require('dap').continue()<CR>",
         { noremap = true, desc = "Continue debug run" })
 vim.api.nvim_set_keymap("n",
+        "<leader>cds",
+        "<cmd>lua require('dap').step_over()<CR>",
+        { noremap = true, desc = "Step over" })
+vim.api.nvim_set_keymap("n",
+        "<leader>cdi",
+        "<cmd>lua require('dap').step_into()<CR>",
+        { noremap = true, desc = "Step into" })
+vim.api.nvim_set_keymap("n",
+        "<leader>cdo",
+        "<cmd>lua require('dap').step_out()<CR>",
+        { noremap = true, desc = "Step out" })
+vim.api.nvim_set_keymap("n",
         "<leader>cdr",
         "<cmd>lua require('dap').repl.open()<CR>",
         { noremap = true, desc = "Open debug repl" })
