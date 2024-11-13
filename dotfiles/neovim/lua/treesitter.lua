@@ -17,3 +17,8 @@ require("nvim-treesitter.configs").setup {
                 disable = {},
         },
 }
+
+require("treesitter-context").setup {
+        max_lines = 3,
+        line_numbers = true
+}
