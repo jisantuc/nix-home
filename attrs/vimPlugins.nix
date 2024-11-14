@@ -55,6 +55,7 @@ with vimPlugins;
   nvim-lspconfig
   nvim-metals
   nvim-tree-lua
+  nvim-treesitter-context
   nvim-web-devicons
   plenary-nvim
   purescript-vim
