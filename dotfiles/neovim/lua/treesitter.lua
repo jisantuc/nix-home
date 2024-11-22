@@ -18,7 +18,4 @@ require("nvim-treesitter.configs").setup {
         },
 }
 
-require("treesitter-context").setup {
-        max_lines = 3,
-        line_numbers = true
-}
+vim.treesitter.language.register("markdown", { "vimwiki" })
