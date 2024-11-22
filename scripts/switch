@@ -22,7 +22,7 @@ function build_macos_x86() {
 }
 
 function activate_home() {
-  nix run nixpkgs#bash -- ./result/activate
+  nix develop --command ./result/activate
 }
 
 if [ "${BASH_SOURCE[0]}" = "${0}" ]; then
