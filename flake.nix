@@ -16,7 +16,12 @@
         inherit nixpkgs home-manager system;
       };
     in
-    flake-utils.lib.eachDefaultSystem (system: {
-      homeConfigurations = mkHome { inherit system; };
-    });
+    flake-utils.lib.eachDefaultSystem (system:
+      let pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        devShells.default = pkgs.mkShell {
+          packages = [ pkgs.bash ];
+        };
+        homeConfigurations = mkHome { inherit system; };
+      });
 }

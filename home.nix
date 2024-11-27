@@ -101,6 +101,10 @@ in
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
+    git = {
+      enable = true;
+    };
+
     lazygit = {
       enable = true;
       settings = {
