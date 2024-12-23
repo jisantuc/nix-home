@@ -69,7 +69,7 @@ require("lspconfig").lua_ls.setup {
 require("lspconfig").purescriptls.setup {}
 
 -- activate typescript ls
-require("lspconfig").tsserver.setup {}
+require("lspconfig").ts_ls.setup {}
 
 -- activate hls
 require('haskell-tools')
