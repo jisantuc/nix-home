@@ -40,6 +40,7 @@ with vimPlugins;
   fzf-lua
   git-blame-nvim
   haskell-tools-nvim
+  kanagawa-nvim
   lazygit-nvim
   luasnip
   markdown-preview-nvim
@@ -61,7 +62,6 @@ with vimPlugins;
   siliconPlugin
   rest-nvim
   tabular
-  vim-colors-solarized
   vim-nix
   vimwiki
   which-key-nvim
