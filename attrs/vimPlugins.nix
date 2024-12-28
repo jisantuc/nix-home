@@ -9,15 +9,6 @@ let
       hash = "sha256-uOiKzhl+3Pi0pFLecQqUWveN+1Z3Tu/UiSPBmS+bio8=";
     };
   };
-  siliconPlugin = pkgs.vimUtils.buildVimPlugin {
-    name = "vim-silicon";
-    src = pkgs.fetchFromGitHub {
-      owner = "segeljakt";
-      repo = "vim-silicon";
-      rev = "4a93122ae2139a12e2a56f064d086c05160b6835";
-      hash = "sha256-8pCHtApD/xXav2UBVOVhkaHg3YS4aNCZ73mog04bYuA=";
-    };
-  };
   markdownNvimPlugin = pkgs.vimUtils.buildVimPlugin {
     name = "markdown.nvim";
     src = pkgs.fetchFromGitHub {
@@ -40,7 +31,6 @@ with vimPlugins;
   fzf-lua
   git-blame-nvim
   haskell-tools-nvim
-  kanagawa-nvim
   lazygit-nvim
   luasnip
   markdown-preview-nvim
@@ -59,7 +49,7 @@ with vimPlugins;
   nvim-web-devicons
   plenary-nvim
   purescript-vim
-  siliconPlugin
+  rose-pine
   rest-nvim
   tabular
   vim-nix

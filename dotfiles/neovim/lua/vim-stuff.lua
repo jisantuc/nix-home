@@ -9,4 +9,4 @@ vim.opt.expandtab = true
 
 -- make colors look nice
 vim.opt.background = "light"
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme rose-pine-dawn")
