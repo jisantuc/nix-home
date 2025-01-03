@@ -14,9 +14,10 @@ cmp.setup({
         mapping = cmp.mapping.preset.insert({
                 ['<C-g>'] = cmp.mapping.abort(),
                 ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                ["<C-Space>"] = cmp.mapping.complete(),
                 ["<Tab>"] = cmp.mapping(function(fallback)
-                        if cmp.visible() then
-                                cmp.select_next_item()
+                        if vim.snippet.active({ direction = 1 }) then
+                                vim.snippet.jump(1)
                         elseif luasnip.locally_jumpable(1) then
                                 luasnip.jump(1)
                         else
@@ -25,10 +26,10 @@ cmp.setup({
                 end, { "i", "s" }),
 
                 ["<S-Tab>"] = cmp.mapping(function(fallback)
-                        if cmp.visible() then
-                                cmp.select_prev_item()
-                        elseif luasnip.locally_jumpable(-1) then
+                        if luasnip.locally_jumpable(-1) then
                                 luasnip.jump(-1)
+                        elseif vim.snippet.active({ direction = -1 }) then
+                                vim.snippet.jump(-1)
                         else
                                 fallback()
                         end
