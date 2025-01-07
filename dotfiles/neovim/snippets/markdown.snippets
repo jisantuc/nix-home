@@ -1,5 +1,5 @@
 snippet patat-slide
-	## slide heading
+	## ${1}
 
 	<!--
 	speaker notes
@@ -9,3 +9,8 @@ snippet patat-speaker-notes
 	<!--
 	speaker notes
 	-->
+
+snippet patat-image
+        \`\`\`sixel
+        magick convert -resize 480 "${1}" sixel:-
+        \`\`\`
