@@ -52,6 +52,7 @@ with vimPlugins;
   rose-pine
   rest-nvim
   tabular
+  todo-comments-nvim
   vim-nix
   vimwiki
   which-key-nvim
