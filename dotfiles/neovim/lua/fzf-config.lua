@@ -15,12 +15,17 @@ vim.api.nvim_set_keymap("n", "<space>ff", "<cmd>:FzfLua files<CR>", { noremap = 
 vim.api.nvim_set_keymap("n", "<space>fg", "<cmd>:FzfLua git_files<CR>", { noremap = true, desc = "Choose git file" })
 vim.api.nvim_set_keymap("n", "<space>fs", "<cmd>:FzfLua grep_project<CR>",
         { noremap = true, desc = "Search string in project" })
+vim.api.nvim_set_keymap("n", "<space>fr", "<cmd>:FzfLua resume<CR>", { noremap = true, desc = "Fzf resume" })
 vim.api.nvim_set_keymap("n", "<space>fls", "<cmd>:FzfLua grep_last<CR>",
         { noremap = true, desc = "Repeat last search" })
 vim.api.nvim_set_keymap("n", "<space>fws", ":lua require('fzf-lua').live_grep({cwd='~/vimwiki'})<CR>",
         { noremap = true, desc = "Search in vimwiki" })
 vim.api.nvim_set_keymap("n", "<space>fwf", ":lua require('fzf-lua').files({cwd='~/vimwiki'})<CR>",
         { noremap = true, desc = "Search files in vimwiki" })
+vim.api.nvim_set_keymap("n", "<space>fhs", ":lua require('fzf-lua').live_grep({cwd='./http-requests'})<CR>",
+        { noremap = true, desc = "Search in http-requests" })
+vim.api.nvim_set_keymap("n", "<space>fhf", ":lua require('fzf-lua').files({cwd='./http-requests'})<CR>",
+        { noremap = true, desc = "Search files http-requests" })
 
 -- make fzf the default select ui
 fzfLua.register_ui_select()
