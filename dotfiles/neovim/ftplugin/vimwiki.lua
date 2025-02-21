@@ -7,3 +7,4 @@ vim.api.nvim_set_keymap("n", "<leader>wo", "<cmd>VimwikiTOC<CR>",
         { noremap = true, desc = "Insert or update table of contents" })
 
 vim.opt_local.spell = true
+vim.opt_local.shiftwidth = 2
