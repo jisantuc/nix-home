@@ -36,6 +36,9 @@ let
     # all kinds of image utilities, mainly I use it for converting between formats
     # https://imagemagick.org/index.php
     pkgs.imagemagick
+    # jwt-cli, for command line decoding JWTs. I have to check which JWT I'm using
+    # all the time.
+    pkgs.jwt-cli
     # library-ization of the claim that all structured text is the same
     # https://pandoc.org/
     pkgs.pandoc
