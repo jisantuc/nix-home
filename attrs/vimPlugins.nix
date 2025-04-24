@@ -9,13 +9,13 @@ let
       hash = "sha256-uOiKzhl+3Pi0pFLecQqUWveN+1Z3Tu/UiSPBmS+bio8=";
     };
   };
-  markdownNvimPlugin = pkgs.vimUtils.buildVimPlugin {
+  renderMarkdownNvimPlugin = pkgs.vimUtils.buildVimPlugin {
     name = "markdown.nvim";
     src = pkgs.fetchFromGitHub {
       owner = "MeanderingProgrammer";
-      repo = "markdown.nvim";
-      rev = "87b9fda112cc72d14a4fac3cf1f1c1e65d0f4852";
-      hash = "sha256-zV97e+at7tEi7d4QP226uYnHf49p7fKXM3BDk8Mu+NE=";
+      repo = "render-markdown.nvim";
+      rev = "v8.3.0";
+      hash = "sha256-v66YkFT1L/4xsDK3C/0BHsvtxsGhuC7qUxJCKjIrEM0=";
     };
   };
 in
@@ -34,7 +34,7 @@ with vimPlugins;
   lazygit-nvim
   luasnip
   markdown-preview-nvim
-  markdownNvimPlugin
+  renderMarkdownNvimPlugin
   neotest
   neotest-haskell
   neotest-python
