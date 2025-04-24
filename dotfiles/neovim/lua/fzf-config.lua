@@ -1,5 +1,11 @@
 local fzfLua = require("fzf-lua")
 
+local default_vimwiki_dir = "~/vimwiki"
+
+local function list_vimwiki_todos()
+        local searchString = "[ ]"
+        fzfLua.grep({ cwd = default_vimwiki_dir, search = searchString })
+end
 -- make find much better
 vim.opt.path:remove "/usr/include"
 vim.opt.path:append "**"
@@ -23,6 +29,7 @@ vim.api.nvim_set_keymap("n", "<space>fws", ":lua require('fzf-lua').live_grep({c
 vim.api.nvim_set_keymap("n", "<space>fwf", ":lua require('fzf-lua').files({cwd='~/vimwiki'})<CR>",
         { noremap = true, desc = "Search files in vimwiki" })
 vim.api.nvim_set_keymap("n", "<space>fhs", ":lua require('fzf-lua').live_grep({cwd='./http-requests'})<CR>",
+vim.keymap.set("n", "<space>fwt", list_vimwiki_todos, { noremap = true, desc = "List incomplete todos" })
         { noremap = true, desc = "Search in http-requests" })
 vim.api.nvim_set_keymap("n", "<space>fhf", ":lua require('fzf-lua').files({cwd='./http-requests'})<CR>",
         { noremap = true, desc = "Search files http-requests" })
