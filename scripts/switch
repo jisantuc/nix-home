@@ -10,15 +10,15 @@ Build and switch to a new home manager generation
 }
 
 function build_linux() {
-  nix build --impure .#homeConfigurations.x86_64-linux.activationPackage
+  nix build --max-jobs 4 --impure .#homeConfigurations.x86_64-linux.activationPackage
 }
 
 function build_macos_arm() {
-  nix build --impure .#homeConfigurations.aarch64-darwin.activationPackage
+  nix build --max-jobs 4 --impure .#homeConfigurations.aarch64-darwin.activationPackage
 }
 
 function build_macos_x86() {
-  nix build --impure .#homeConfigurations.x86_64-darwin.activationPackage
+  nix build --max-jobs 4 --impure .#homeConfigurations.x86_64-darwin.activationPackage
 }
 
 function activate_home() {

@@ -57,7 +57,7 @@ let
   ];
 
   patchedFonts = [
-    (pkgs.nerdfonts.override { fonts = [ "Hasklig" "SourceCodePro" ]; })
+    pkgs.nerd-fonts.hasklug
   ];
 
   treesitterGrammars = (p:

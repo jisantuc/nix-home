@@ -15,7 +15,7 @@
   p.markdown
   p.markdown-inline
   p.nix
-  p.org
+  p.norg
   p.python
   p.scala
   p.sql
