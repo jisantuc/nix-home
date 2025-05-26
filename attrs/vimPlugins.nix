@@ -43,17 +43,13 @@ with vimPlugins;
   nvim-dap-ui
   nvim-dap-virtual-text
   nvim-dap-python
-  nvim-lspconfig
-  nvim-metals
   nvim-tree-lua
   nvim-web-devicons
   plenary-nvim
-  purescript-vim
   rose-pine
   rest-nvim
   tabular
   todo-comments-nvim
-  vim-nix
   vimwiki
   which-key-nvim
 ]
