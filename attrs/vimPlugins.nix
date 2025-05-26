@@ -14,8 +14,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "MeanderingProgrammer";
       repo = "render-markdown.nvim";
-      rev = "v8.3.0";
-      hash = "sha256-v66YkFT1L/4xsDK3C/0BHsvtxsGhuC7qUxJCKjIrEM0=";
+      rev = "v8.4.0";
+      hash = "sha256-XRecogbzrJBB4EnulhVx1BiY+k9/O4SlxXYMA6i6DX0=";
     };
   };
 in
@@ -43,17 +43,13 @@ with vimPlugins;
   nvim-dap-ui
   nvim-dap-virtual-text
   nvim-dap-python
-  nvim-lspconfig
-  nvim-metals
   nvim-tree-lua
   nvim-web-devicons
   plenary-nvim
-  purescript-vim
   rose-pine
   rest-nvim
   tabular
   todo-comments-nvim
-  vim-nix
   vimwiki
   which-key-nvim
 ]
