@@ -13,15 +13,21 @@
 
     let
       mkHome = { system }: import ./hm-lib.nix {
-        inherit nixpkgs home-manager system;
+        inherit nixpkgs home-manager
+          system;
       };
     in
     flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = nixpkgs.legacyPackages.${system};
-      in {
+      let
+        pkgs =
+          nixpkgs.legacyPackages.${system};
+      in
+      {
         devShells.default = pkgs.mkShell {
           packages = [ pkgs.bash ];
         };
-        homeConfigurations = mkHome { inherit system; };
+        homeConfigurations = mkHome {
+          inherit system;
+        };
       });
 }

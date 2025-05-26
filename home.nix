@@ -138,15 +138,12 @@ in
         ]);
       extraPackages = with pkgs;
         [
-          dhall-lsp-server
           fzf
           lua-language-server
           nil
-          nodePackages.typescript-language-server
           pyright
           python3Packages.pylatexenc
           silicon
-          terraform-ls
         ];
     };
 

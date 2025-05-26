@@ -1,9 +1,5 @@
-require("lspconfig").nil_ls.setup {
-        settings = {
-                ['nil'] = {
-                        formatting = {
-                                command = { "nixpkgs-fmt" },
-                        },
-                },
-        }
+return {
+        cmd = { "nil" },
+        filetypes = { "nix" },
+        root_markers = { "flake.nix" },
 }
