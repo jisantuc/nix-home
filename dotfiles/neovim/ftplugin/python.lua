@@ -45,3 +45,10 @@ vim.api.nvim_set_keymap("n",
         "<leader>cdtc",
         "<cmd>lua require('dap-python').test_class()<CR>",
         { noremap = true, desc = "Test class" })
+
+require("neotest").setup {
+        adapters = {
+                require("neotest-python")
+        }
+}
+
