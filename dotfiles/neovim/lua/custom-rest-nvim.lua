@@ -1,3 +1,7 @@
+require("kulala").setup({
+        lsp = { formatter = true, }
+})
+
 vim.g.rest_nvim = {
         -- Skip SSL verification, useful for unknown certificates
         skip_ssl_verification = false,

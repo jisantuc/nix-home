@@ -144,6 +144,16 @@ in
           pyright
           python3Packages.pylatexenc
           silicon
+          (buildNpmPackage {
+            name = "kulala-ls";
+            src = fetchFromGitHub {
+              owner = "mistweaverco";
+              repo = "kulala-ls";
+              rev = "v1.9.0";
+              hash = "sha256-We7d6if++n8Y0eouY3I9hbb5iJ+YyaPyFSvu6Ff5U0U=";
+            };
+            npmDepsHash = "sha256-/6JZYsIYDJHS/8TOPjtR/SrRbzTbL43X0g/tPIn2YfQ=";
+          })
         ];
     };
 
