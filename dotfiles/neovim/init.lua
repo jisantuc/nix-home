@@ -24,3 +24,9 @@ require("vim-stuff")
 require("render-markdown").setup {
         completions = { lsp = { enabled = true } }
 }
+
+vim.filetype.add({
+        extension = {
+                fen = "fen"
+        }
+})
