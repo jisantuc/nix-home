@@ -53,21 +53,22 @@ local function boardToFen(opts)
         local nextMove = opts.fargs[1]
         vim.cmd(":let @+ = \""
                 -- where are all the pieces
-                .. piecePlacement
-                .. " "
-                -- who moves next ("w" or "b")
-                .. nextMove
-                -- king-/queen-side castling for White / black
-                -- maybe someday an argument when it becomes relevant in my chess book
-                .. "KQkq"
-                .. " "
-                -- half move limit
-                .. "99"
-                .. " "
-                -- current half moves
-                .. "0"
-                -- terminate string
-                .. "\"")
+                .. joinBy({
+                                piecePlacement,
+                                -- who moves next ("w" or "b")
+                                nextMove,
+                                -- king-/queen-side castling for White / black
+                                -- maybe someday an argument when it becomes relevant in my chess book
+                                "KQkq",
+                                -- en passant positions
+                                "-",
+                                -- half move clock
+                                "0",
+                                -- completed turns
+                                "1" },
+                        " ")
+                .. "\""
+        )
         print("Position copied to clipboard with " .. nextMove .. " to move")
 end
 
