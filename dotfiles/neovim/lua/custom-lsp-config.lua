@@ -6,3 +6,4 @@ vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.setloclist()<
 vim.lsp.enable("python")
 vim.lsp.enable("lua")
 vim.lsp.enable("nix")
+vim.lsp.enable("typst")
