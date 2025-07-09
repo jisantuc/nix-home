@@ -18,6 +18,15 @@ let
       hash = "sha256-XRecogbzrJBB4EnulhVx1BiY+k9/O4SlxXYMA6i6DX0=";
     };
   };
+  typstPreviewPlugin = pkgs.vimUtils.buildVimPlugin {
+    name = "typst-preview.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "chomosuke";
+      repo = "typst-preview.nvim";
+      rev = "v1.3.2";
+      hash = "sha256-BGNgGpg6ixvQ7bZl1pFRi3B1lqKDZqI4Ix3gFQVFxXg=";
+    };
+  };
 in
 with vimPlugins;
 [
@@ -50,6 +59,7 @@ with vimPlugins;
   rest-nvim
   tabular
   todo-comments-nvim
+  typstPreviewPlugin
   vimwiki
   which-key-nvim
 ]

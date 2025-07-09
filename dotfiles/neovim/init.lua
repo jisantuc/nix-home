@@ -19,14 +19,9 @@ require("git-config")
 require("tree-config")
 require("treesitter")
 require("vim-stuff")
+require("filetypes")
 
 -- in ftplugin, this throws a bunch of errors. It needs to happen just once.
 require("render-markdown").setup {
         completions = { lsp = { enabled = true } }
 }
-
-vim.filetype.add({
-        extension = {
-                fen = "fen"
-        }
-})
