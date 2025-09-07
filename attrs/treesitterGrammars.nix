@@ -3,6 +3,7 @@
 # requested grammars
 { p, ... }:
 [
+  p.elixir
   p.fish
   p.haskell
   p.http

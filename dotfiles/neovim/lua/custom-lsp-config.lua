@@ -3,6 +3,7 @@ vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.setloclist()<
         { noremap = true, desc = "Show buffer diagnostics" })
 
 
+vim.lsp.enable("elixir")
 vim.lsp.enable("python")
 vim.lsp.enable("lua")
 vim.lsp.enable("nix")
