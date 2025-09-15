@@ -45,6 +45,7 @@ with vimPlugins;
   markdown-preview-nvim
   renderMarkdownNvimPlugin
   neotest
+  neotest-elixir
   neotest-haskell
   neotest-python
   nvim-cmp
