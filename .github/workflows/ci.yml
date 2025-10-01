@@ -29,7 +29,7 @@ jobs:
     - name: Unlock repository
       run: |
         echo "${{ secrets.GIT_CRYPT_SECRET_KEY }}" | base64 --decode | git-crypt unlock -
-    - uses: cachix/install-nix-action@v22
+    - uses: cachix/install-nix-action@v31
       with:
         extra_nix_config: |
           access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
