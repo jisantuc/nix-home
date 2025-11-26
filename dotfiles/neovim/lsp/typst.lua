@@ -1,5 +1,7 @@
 return {
         cmd = { "tinymist" },
         filetypes = { "typst" },
-        settings = { }
+        settings = {
+                rootPath = vim.env.PWD
+        }
 }
