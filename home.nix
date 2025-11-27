@@ -2,6 +2,7 @@
 
 let
   secrets = import ./secrets.nix;
+  envHome  = builtins.getEnv "HOME";
 
   shellUtilities = [
     # visualize dot files with the dot command
@@ -68,7 +69,7 @@ in
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = builtins.getEnv "USER";
-  home.homeDirectory = builtins.getEnv "HOME";
+  home.homeDirectory = envHome;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -106,6 +107,15 @@ in
 
     git = {
       enable = true;
+      userEmail = secrets.userEmail;
+      userName = secrets.userName;
+      extraConfig = {
+        gpg.format = "ssh";
+        gpg.ssh.allowedSignersFile = "${envHome}/.ssh/allowed-signers";
+        user.signingKey = "~/.ssh/id_rsa.pub";
+        commit.gpgsign = true;
+        core.excludesFile = "${envHome}/.gitignore";
+      };
     };
 
     lazygit = {
