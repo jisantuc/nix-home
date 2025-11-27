@@ -2,7 +2,7 @@
 
 let
   secrets = import ./secrets.nix;
-  envHome  = builtins.getEnv "HOME";
+  envHome = builtins.getEnv "HOME";
 
   shellUtilities = [
     # visualize dot files with the dot command
