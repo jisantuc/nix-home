@@ -7,4 +7,3 @@ export EDITOR=vi
 starship init fish | source
 
 direnv hook fish | source
-

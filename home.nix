@@ -55,6 +55,7 @@ let
   ourobouros = [
     pkgs.bash-completion
     pkgs.nixpkgs-fmt
+    pkgs.nix
   ];
 
   patchedFonts = [
@@ -107,9 +108,9 @@ in
 
     git = {
       enable = true;
-      userEmail = secrets.userEmail;
-      userName = secrets.userName;
-      extraConfig = {
+      settings = {
+        user.email = secrets.userEmail;
+        user.name = secrets.userName;
         gpg.format = "ssh";
         gpg.ssh.allowedSignersFile = "${envHome}/.ssh/allowed-signers";
         user.signingKey = "~/.ssh/id_rsa.pub";
