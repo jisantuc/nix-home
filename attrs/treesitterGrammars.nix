@@ -6,6 +6,7 @@
   p.elixir
   p.fish
   p.haskell
+  p.html
   p.http
   p.java
   p.javascript
@@ -16,7 +17,6 @@
   p.markdown
   p.markdown-inline
   p.nix
-  p.norg
   p.python
   p.scala
   p.sql
