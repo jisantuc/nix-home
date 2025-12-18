@@ -1,5 +1,14 @@
+local server_cmd;
+
+-- Prefer ty if it's available, otherwise fall back to pyright
+if vim.fn.executable("ty") == 1 then
+        server_cmd = {"ty", "server"}
+else
+        server_cmd = { "pyright-langserver", "--stdio" }
+end
+
 return {
-        cmd = { "pyright-langserver", "--stdio" },
+        cmd = server_cmd,
         filetypes = { "python" },
         root_markers = {
                 "pyproject.toml",
