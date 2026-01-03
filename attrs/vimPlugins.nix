@@ -43,6 +43,7 @@ with vimPlugins;
   lazygit-nvim
   luasnip
   markdown-preview-nvim
+  mini-icons
   renderMarkdownNvimPlugin
   neotest
   neotest-elixir
