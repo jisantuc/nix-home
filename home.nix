@@ -116,6 +116,7 @@ in
         user.signingKey = "~/.ssh/id_rsa.pub";
         commit.gpgsign = true;
         core.excludesFile = "${envHome}/.gitignore";
+        init.defaultBranch = "main";
       };
     };
 
