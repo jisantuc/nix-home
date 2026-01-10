@@ -4,6 +4,10 @@ let
   secrets = import ./secrets.nix;
   envHome = builtins.getEnv "HOME";
 
+  macUtilities = pkgs.lib.optionals pkgs.stdenv.isDarwin [
+    pkgs.iterm2
+  ];
+
   shellUtilities = [
     # visualize dot files with the dot command
     # https://graphviz.org/
@@ -193,5 +197,6 @@ in
     shellUtilities ++
     systemUtilities ++
     ourobouros ++
-    patchedFonts;
+    patchedFonts ++
+    macUtilities;
 }
