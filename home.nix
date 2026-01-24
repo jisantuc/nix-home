@@ -59,7 +59,6 @@ let
   ourobouros = [
     pkgs.bash-completion
     pkgs.nixpkgs-fmt
-    pkgs.nix
   ];
 
   patchedFonts = [
@@ -103,6 +102,12 @@ in
   xdg.configFile."direnv/lib" = {
     source = ./dotfiles/direnv/lib;
     recursive = true;
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 60d";
   };
 
   programs = {
