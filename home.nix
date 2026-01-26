@@ -63,6 +63,7 @@ let
 
   patchedFonts = [
     pkgs.nerd-fonts.hasklug
+    pkgs.font-awesome_7
   ];
 
   treesitterGrammars = (p:
