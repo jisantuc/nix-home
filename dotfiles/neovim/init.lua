@@ -20,6 +20,7 @@ require("tree-config")
 require("treesitter")
 require("vim-stuff")
 require("filetypes")
+require("datadog")
 
 -- in ftplugin, this throws a bunch of errors. It needs to happen just once.
 require("render-markdown").setup {
