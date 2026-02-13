@@ -18,6 +18,7 @@
   p.markdown-inline
   p.nix
   p.python
+  p.rst
   p.scala
   p.sql
   p.terraform
