@@ -45,6 +45,8 @@ let
     # jwt-cli, for command line decoding JWTs. I have to check which JWT I'm using
     # all the time.
     pkgs.jwt-cli
+    # mise, for polyglot tool management where people don't know the glory of Nix
+    pkgs.mise
     # library-ization of the claim that all structured text is the same
     # https://pandoc.org/
     pkgs.pandoc
