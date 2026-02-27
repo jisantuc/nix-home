@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 let
   secrets = import ./secrets.nix;
   envHome = builtins.getEnv "HOME";
@@ -10,6 +9,8 @@ let
   ];
 
   shellUtilities = [
+    # build ascii diagrams in the shell
+    pkgs.tmmpr
     # visualize dot files with the dot command
     # https://graphviz.org/
     pkgs.graphviz

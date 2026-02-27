@@ -7,22 +7,26 @@
     home-manager.url = "github:nix-community/home-manager/release-25.11";
 
     flake-utils.url = "github:numtide/flake-utils";
+
+    tmmpr.url = "github:tanciaku/tmmpr";
   };
 
-  outputs = { nixpkgs, home-manager, flake-utils, ... }:
+  outputs = { self, nixpkgs, home-manager, flake-utils, tmmpr, ... }:
 
-    let
-      mkHome = { system }: import ./hm-lib.nix {
-        inherit nixpkgs home-manager
-          system;
-      };
-    in
     flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs =
-          nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [ self.overlays.${system}.default ];
+        };
+        mkHome = { system }: import ./hm-lib.nix {
+          inherit pkgs home-manager system;
+        };
       in
       {
+        overlays.default = final: prev: {
+          tmmpr = tmmpr.packages.${system}.default;
+        };
         devShells.default = pkgs.mkShell {
           packages = [ pkgs.bash ];
         };

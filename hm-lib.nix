@@ -1,7 +1,5 @@
-{ nixpkgs, home-manager, system, ... }:
-home-manager.lib.homeManagerConfiguration rec {
-  pkgs = import nixpkgs {
-    inherit system;
-  };
+{ pkgs, home-manager, ... }:
+home-manager.lib.homeManagerConfiguration {
+  inherit pkgs;
   modules = [ ./home.nix ];
 }
