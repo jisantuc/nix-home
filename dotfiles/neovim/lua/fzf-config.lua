@@ -30,6 +30,8 @@ vim.keymap.set("n", "<space>fhs", ":lua require('fzf-lua').live_grep_native({cwd
         { noremap = true, desc = "Search in http-requests" })
 vim.keymap.set("n", "<space>fhf", ":lua require('fzf-lua').files({cwd='./http-requests'})<CR>",
         { noremap = true, desc = "Search files http-requests" })
+vim.keymap.set("n", "<space>fls", "<cmd>:FzfLua lsp_live_workspace_symbols<CR>",
+        { noremap = true, desc = "Search workspace symbols" })
 
 -- make fzf the default select ui
 fzfLua.register_ui_select()
