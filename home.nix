@@ -3,12 +3,20 @@ let
   secrets = import ./secrets.nix;
   envHome = builtins.getEnv "HOME";
 
+  rustPkgs = (import ./attrs/rustPackages.nix) {
+    rustPlatform = pkgs.rustPlatform;
+    lib = pkgs.lib;
+    fetchFromGitHub = pkgs.fetchFromGitHub;
+  };
+
   macUtilities = pkgs.lib.optionals pkgs.stdenv.isDarwin [
     pkgs.iterm2
     pkgs.rectangle
   ];
 
   shellUtilities = [
+    # TUI for spaced repetition
+    rustPkgs.repeater
     # build ascii diagrams in the shell
     pkgs.tmmpr
     # visualize dot files with the dot command
