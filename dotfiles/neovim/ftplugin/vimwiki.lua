@@ -14,7 +14,12 @@ local function createCards()
     { text = true, cwd = vim.fn.expand("$HOME") .. "/srs" }):wait()
   local stdErr = resultTable["stderr"]
   local expectedErrorStart = string.find(stdErr, "Device not configured")
-  if expectedErrorStart < 0 then print(stdErr) else print("Cards created 📝") end
+  if expectedErrorStart == nil and stdErr ~= nil
+  then
+    vim.print(stdErr)
+  else
+    print("Cards created 📝")
+  end
 end
 
 vim.api.nvim_create_user_command("CreateCards", createCards, {})
