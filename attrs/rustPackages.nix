@@ -6,16 +6,16 @@
   repeater = rustPlatform.buildRustPackage
     (finalAttrs: {
       pname = "repeater";
-      version = "v0.1.6";
+      version = "v0.1.9";
 
       src = fetchFromGitHub {
         owner = "shaankhosla";
         repo = "repeater";
         tag = finalAttrs.version;
-        hash = "sha256-ONbFUcLwzWJMyGUZZBvUYfTnVUEzyO4TYDQCL/ykdFU=";
+        hash = "sha256-vkiDJ9hGEa9PCaNjgGJAvAFGUxXJK04ezvXyAmJB3bk=";
       };
 
-      cargoHash = "sha256-KlvXr52bnVqVuzho2RIKRD6NsORicTtUdABt/ZL6Dwc=";
+      cargoHash = "sha256-/ttQpk9JnSRhE/VOJlz60LpV1PJ/spzXQ1EPLcox1mw=";
 
     });
 }
