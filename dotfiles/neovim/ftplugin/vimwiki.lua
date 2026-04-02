@@ -23,3 +23,19 @@ local function createCards()
 end
 
 vim.api.nvim_create_user_command("CreateCards", createCards, {})
+
+local function findCheckedItems()
+        local query = vim.treesitter.query.parse("markdown", [[
+  (list_item _ (task_list_marker_checked)) @li
+]])
+        local tree = vim.treesitter.get_parser():parse()[1]
+        local bufnr = vim.api.nvim_get_current_buf()
+
+        for id, node, metadata, match in query:iter_captures(tree:root(), bufnr, 0, -1) do
+                -- Print the node name and source text.
+                vim.print({ node, vim.treesitter.get_node_text(node, bufnr) })
+                -- TODO: delete/yank all text from the matched nodes so I can paste it elsewhere
+        end
+end
+
+vim.api.nvim_create_user_command("YankChecked", findCheckedItems, {})
