@@ -11,10 +11,11 @@ vim.opt_local.shiftwidth = 2
 
 local function createCards()
   local resultTable = vim.system({ "repeater", "create", vim.fn.expand("%") },
-    { text = true, cwd = vim.fn.expand("$HOME") .. "/srs" }):wait()
+    { text = true }):wait()
   local stdErr = resultTable["stderr"]
-  local expectedErrorStart = string.find(stdErr, "Device not configured")
-  if expectedErrorStart == nil and stdErr ~= nil
+  local macErrorStart = string.find(stdErr, "Device not configured")
+  local linuxErrorStart = string.find(stdErr, "No such device or address")
+  if macErrorStart == nil and linuxErrorStart == nil and stdErr ~= nil
   then
     vim.print(stdErr)
   else
