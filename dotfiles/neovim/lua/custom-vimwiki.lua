@@ -9,5 +9,11 @@ local photowiki = {
         ext = "md";
 }
 
-vim.g.vimwiki_list = { wiki, photowiki };
+local cardswiki = {
+        path = "~/srs-cards";
+        syntax = "markdown";
+        ext = "md";
+}
+
+vim.g.vimwiki_list = { wiki, photowiki, cardswiki };
 vim.g.vimwiki_global_ext = 0;
