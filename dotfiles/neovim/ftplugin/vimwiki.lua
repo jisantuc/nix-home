@@ -4,23 +4,54 @@ vim.api.nvim_set_keymap("n", "<leader>wlb", "<cmd>VimwikiBacklinks<CR>", { norem
 vim.api.nvim_set_keymap("n", "<leader>wlc", "<cmd>VimwikiCheckLinks<CR>", { noremap = true, desc = "Check all links" })
 -- generate a table of contents
 vim.api.nvim_set_keymap("n", "<leader>wo", "<cmd>VimwikiTOC<CR>",
-  { noremap = true, desc = "Insert or update table of contents" })
+        { noremap = true, desc = "Insert or update table of contents" })
 
 vim.opt_local.spell = true
 vim.opt_local.shiftwidth = 2
 
 local function createCards()
-  local resultTable = vim.system({ "repeater", "create", vim.fn.expand("%") },
-    { text = true }):wait()
-  local stdErr = resultTable["stderr"]
-  local macErrorStart = string.find(stdErr, "Device not configured")
-  local linuxErrorStart = string.find(stdErr, "No such device or address")
-  if macErrorStart == nil and linuxErrorStart == nil and stdErr ~= nil
-  then
-    vim.print(stdErr)
-  else
-    print("Cards created 📝")
-  end
+        local resultTable = vim.system({ "repeater", "create", vim.fn.expand("%") },
+                { text = true }):wait()
+        local stdErr = resultTable["stderr"]
+        local macErrorStart = string.find(stdErr, "Device not configured")
+        local linuxErrorStart = string.find(stdErr, "No such device or address")
+        if macErrorStart == nil and linuxErrorStart == nil and stdErr ~= nil
+        then
+                vim.print(stdErr)
+        else
+                print("Cards created 📝")
+        end
 end
 
+local function yankAllMatches(acc, query, bufnr)
+        local tree = vim.treesitter.get_parser():parse()[1]
+        local anyFound = false
+        local r1, r2
+        for _, node, _, _ in query:iter_captures(tree:root(), bufnr, 0, -1) do
+                anyFound = true
+                r1, _, r2, _ = node:range()
+                local checkedItem = vim.api.nvim_buf_get_lines(bufnr, r1, r2, false)[1]
+                table.insert(acc, checkedItem)
+                break
+        end
+
+        if anyFound then
+                vim.api.nvim_buf_set_lines(bufnr, r1, r2, false, {})
+                return yankAllMatches(acc, query, bufnr)
+        else
+                return acc
+        end
+end
+
+local function yankChecked()
+        local query = vim.treesitter.query.parse("markdown", [[
+  (list_item _ (task_list_marker_checked)) @li
+]])
+        local bufnr = vim.api.nvim_get_current_buf()
+
+        local allChecked = yankAllMatches({}, query, bufnr)
+        vim.fn.setreg("@", allChecked, "l")
+end
+
+vim.api.nvim_create_user_command("YankChecked", yankChecked, {})
 vim.api.nvim_create_user_command("CreateCards", createCards, {})
