@@ -59,12 +59,12 @@ let
     # library-ization of the claim that all structured text is the same
     # https://pandoc.org/
     pkgs.pandoc
+    # presentations from the terminal
     # https://github.com/jaspervdj/patat
     pkgs.haskellPackages.patat
     # also like upgraded curl but mainly useful for downloading files
     # https://www.gnu.org/software/wget/
     pkgs.wget
-    # presentations from the terminal
   ];
 
   # Packages I need because it'll be a nix-y system
