@@ -1,1 +1,1 @@
-vim.opt_local.formatprg = "nixpkgs-fmt"
+vim.opt_local.formatprg = "nixfmt -"

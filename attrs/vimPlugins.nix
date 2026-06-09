@@ -1,4 +1,9 @@
-{ pkgs, vimPlugins, treesitterGrammars, ... }:
+{
+  pkgs,
+  vimPlugins,
+  treesitterGrammars,
+  ...
+}:
 let
   calendarPlugin = pkgs.vimUtils.buildVimPlugin {
     name = "calendar-vim";

@@ -11,17 +11,28 @@
     tmmpr.url = "github:tanciaku/tmmpr";
   };
 
-  outputs = { self, nixpkgs, home-manager, flake-utils, tmmpr, ... }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      flake-utils,
+      tmmpr,
+      ...
+    }:
 
-    flake-utils.lib.eachDefaultSystem (system:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = import nixpkgs {
           inherit system;
           overlays = [ self.overlays.${system}.default ];
         };
-        mkHome = { system }: import ./hm-lib.nix {
-          inherit pkgs home-manager system;
-        };
+        mkHome =
+          { system }:
+          import ./hm-lib.nix {
+            inherit pkgs home-manager system;
+          };
       in
       {
         overlays.default = final: prev: {
@@ -33,5 +44,6 @@
         homeConfigurations = mkHome {
           inherit system;
         };
-      });
+      }
+    );
 }

@@ -14,7 +14,7 @@ function build_home() {
 }
 
 function check_formatting() {
-  nixpkgs-fmt --check *.nix
+  nixfmt --check *.nix
 }
 
 if [ "${BASH_SOURCE[0]}" = "${0}" ]; then

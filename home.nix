@@ -70,7 +70,7 @@ let
   # Packages I need because it'll be a nix-y system
   ourobouros = [
     pkgs.bash-completion
-    pkgs.nixpkgs-fmt
+    pkgs.nixfmt
   ];
 
   patchedFonts = [
@@ -78,9 +78,7 @@ let
     pkgs.font-awesome_7
   ];
 
-  treesitterGrammars = (p:
-    (import attrs/treesitterGrammars.nix) { inherit p; }
-  );
+  treesitterGrammars = (p: (import attrs/treesitterGrammars.nix) { inherit p; });
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -164,21 +162,21 @@ in
         inherit pkgs treesitterGrammars;
       };
 
-      extraLuaPackages = (ps:
-        [
+      extraLuaPackages = (
+        ps: [
           ps.lua-curl
           ps.mimetypes
           ps.xml2lua
-        ]);
-      extraPackages = with pkgs;
-        [
-          fzf
-          lua-language-server
-          nil
-          pyright
-          python3Packages.pylatexenc
-          silicon
-        ];
+        ]
+      );
+      extraPackages = with pkgs; [
+        fzf
+        lua-language-server
+        nil
+        pyright
+        python3Packages.pylatexenc
+        silicon
+      ];
     };
 
     direnv = {
@@ -190,7 +188,10 @@ in
     fish = {
       enable = true;
       plugins = with pkgs.fishPlugins; [
-        { name = "bass"; src = bass.src; }
+        {
+          name = "bass";
+          src = bass.src;
+        }
       ];
     };
 
@@ -211,10 +212,5 @@ in
 
   fonts.fontconfig.enable = true;
 
-  home.packages =
-    shellUtilities ++
-    systemUtilities ++
-    ourobouros ++
-    patchedFonts ++
-    macUtilities;
+  home.packages = shellUtilities ++ systemUtilities ++ ourobouros ++ patchedFonts ++ macUtilities;
 }
