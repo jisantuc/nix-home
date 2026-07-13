@@ -9,3 +9,9 @@ vim.filetype.add({
                 typst = "typst"
         }
 })
+
+vim.filetype.add({
+        extension = {
+                j2 = "jinja"
+        }
+})
