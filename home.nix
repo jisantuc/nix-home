@@ -15,6 +15,8 @@ let
   ];
 
   shellUtilities = [
+    # general-purpose fuzzy finder
+    pkgs.fzf
     # TUI for spaced repetition
     rustPkgs.repeater
     # build ascii diagrams in the shell
@@ -170,7 +172,6 @@ in
         ]
       );
       extraPackages = with pkgs; [
-        fzf
         lua-language-server
         nil
         pyright
