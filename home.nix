@@ -4,6 +4,7 @@ let
   envHome = builtins.getEnv "HOME";
 
   rustPkgs = (import ./attrs/rustPackages.nix) {
+    inherit pkgs;
     rustPlatform = pkgs.rustPlatform;
     lib = pkgs.lib;
     fetchFromGitHub = pkgs.fetchFromGitHub;
@@ -57,7 +58,7 @@ let
     # all the time.
     pkgs.jwt-cli
     # mise, for polyglot tool management where people don't know the glory of Nix
-    pkgs.mise
+    rustPkgs.mise
     # library-ization of the claim that all structured text is the same
     # https://pandoc.org/
     pkgs.pandoc
