@@ -28,8 +28,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "chomosuke";
       repo = "typst-preview.nvim";
-      rev = "v1.3.2";
-      hash = "sha256-BGNgGpg6ixvQ7bZl1pFRi3B1lqKDZqI4Ix3gFQVFxXg=";
+      rev = "v1.5.0";
+      hash = "sha256-UTugVfydwGTmf5RomQ0R72Yf6fSz8gGeY/fg51qW454=";
     };
   };
 in

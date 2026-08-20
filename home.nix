@@ -13,6 +13,7 @@ let
   macUtilities = pkgs.lib.optionals pkgs.stdenv.isDarwin [
     pkgs.iterm2
     pkgs.rectangle
+    pkgs.sioyek
   ];
 
   shellUtilities = [
