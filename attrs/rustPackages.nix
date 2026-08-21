@@ -32,8 +32,13 @@
 
     cargoHash = "sha256-16tJXdx8HG48bMvEZ/0gfLIu/gHOxM2x93lPVwwEA9w=";
 
+    buildInputs = [
+      pkgs.openssl
+    ];
+
     nativeBuildInputs = [
       pkgs.cmake
+      pkgs.pkg-config
     ];
 
     doCheck = false;
