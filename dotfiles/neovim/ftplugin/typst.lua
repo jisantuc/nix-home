@@ -1,0 +1,10 @@
+-- TODO: can identify speaker note content with
+-- 
+-- (code
+--   (call
+--   (ident)@speakernote
+--   (#eq? @speakernote "speaker-note")
+--   (content) @notecontent))
+--
+-- then do something like YankChecked to extract it all
+-- (there's probably a yank_matching_query function I could extract here)

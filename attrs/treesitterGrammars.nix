@@ -24,6 +24,7 @@
   p.terraform
   p.tsx
   p.typescript
+  p.typst
   p.vim
   p.vimdoc
   p.yaml
