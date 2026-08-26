@@ -19,8 +19,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "MeanderingProgrammer";
       repo = "render-markdown.nvim";
-      rev = "v8.10.0";
-      hash = "sha256-wNtAakOZPrzpp7btAfHZ4xseWOpdcX1QgPWNGbDYJVM=";
+      rev = "v8.13.0";
+      hash = "sha256-ukJUaqEYI60o/lyLM5GaKsRdMW/24IZnzVzPB9/Q/zo=";
     };
   };
   typstPreviewPlugin = pkgs.vimUtils.buildVimPlugin {
