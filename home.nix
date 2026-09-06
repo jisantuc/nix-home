@@ -153,6 +153,9 @@ in
             lightTheme = true;
           };
         };
+        git = {
+          overrideGpg = true;
+        };
       };
     };
 
