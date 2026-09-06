@@ -19,10 +19,6 @@ let
   shellUtilities = [
     # general-purpose fuzzy finder
     pkgs.fzf
-    # TUI for spaced repetition
-    rustPkgs.repeater
-    # build ascii diagrams in the shell
-    pkgs.tmmpr
     # visualize dot files with the dot command
     # https://graphviz.org/
     pkgs.graphviz
