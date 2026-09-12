@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   secrets = import ./secrets.nix;
   envHome = builtins.getEnv "HOME";
@@ -216,4 +216,5 @@ in
 
   home.packages = shellUtilities ++ systemUtilities ++ ourobouros ++ patchedFonts ++ macUtilities;
 }
-// (import services/systemd.nix) { inherit pkgs; }
+// ((import services/systemd.nix) { inherit pkgs; })
+// ((import services/launchd.nix) { inherit config; })
