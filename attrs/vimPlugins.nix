@@ -10,8 +10,9 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "mattn";
       repo = "calendar-vim";
-      rev = "2083a41e2d310f9bbbbf644517f30e901f1fb04d";
-      hash = "sha256-uOiKzhl+3Pi0pFLecQqUWveN+1Z3Tu/UiSPBmS+bio8=";
+      # f2bf2846221954e6a47f6659ff330e1a823c69eb
+      rev = "master";
+      hash = "sha256-RoiTv2yTw6pkvkrKBz2T1MV3t5X3RjIMK+z/PMRNEdE=";
     };
   };
   renderMarkdownNvimPlugin = pkgs.vimUtils.buildVimPlugin {
