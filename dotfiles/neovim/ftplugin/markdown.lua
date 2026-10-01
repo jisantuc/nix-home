@@ -11,3 +11,6 @@ local function readingTime()
 end
 
 vim.api.nvim_create_user_command("ReadingTime", readingTime, {})
+
+vim.api.nvim_set_keymap("n", "<leader>jt", "<cmd>JiraViewTicket<CR>",
+        { noremap = true, desc = "Open Jira ticket under cursor" })
