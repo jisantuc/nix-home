@@ -14,13 +14,14 @@ require("custom-neotest")
 require("custom-rest-nvim")
 require("custom-vimwiki")
 require("custom-which-key")
+require("datadog")
+require("filetypes")
 require("fzf-config")
 require("git-config")
+require("jira")
 require("tree-config")
 require("treesitter")
 require("vim-stuff")
-require("filetypes")
-require("datadog")
 
 -- in ftplugin, this throws a bunch of errors. It needs to happen just once.
 require("render-markdown").setup {
