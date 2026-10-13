@@ -165,9 +165,9 @@ in
         inherit pkgs treesitterGrammars;
       };
 
+      # Apparently not doing anything for rest-nvim! 🤔
       extraLuaPackages = (
         ps: [
-          ps.lua-curl
           ps.mimetypes
           ps.xml2lua
         ]
