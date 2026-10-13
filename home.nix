@@ -77,6 +77,8 @@ let
     pkgs.nerd-fonts.hasklug
     pkgs.font-awesome_7
   ];
+
+  treesitterGrammars = (p: (import attrs/treesitterGrammars.nix) { inherit p; });
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -160,7 +162,7 @@ in
 
       plugins = (import ./attrs/vimPlugins.nix) {
         vimPlugins = pkgs.vimPlugins;
-        inherit pkgs;
+        inherit pkgs treesitterGrammars;
       };
 
       extraLuaPackages = (
