@@ -77,8 +77,6 @@ let
     pkgs.nerd-fonts.hasklug
     pkgs.font-awesome_7
   ];
-
-  treesitterGrammars = (p: (import attrs/treesitterGrammars.nix) { inherit p; });
 in
 {
   # Home Manager needs a bit of information about you and the
@@ -94,7 +92,7 @@ in
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "23.05";
+  home.stateVersion = "26.05";
 
   xdg.configFile.nvim = {
     source = ./dotfiles/neovim;
@@ -162,7 +160,7 @@ in
 
       plugins = (import ./attrs/vimPlugins.nix) {
         vimPlugins = pkgs.vimPlugins;
-        inherit pkgs treesitterGrammars;
+        inherit pkgs;
       };
 
       extraLuaPackages = (
