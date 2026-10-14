@@ -94,7 +94,7 @@ in
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "23.05";
+  home.stateVersion = "26.05";
 
   xdg.configFile.nvim = {
     source = ./dotfiles/neovim;
@@ -165,9 +165,9 @@ in
         inherit pkgs treesitterGrammars;
       };
 
+      # Apparently not doing anything for rest-nvim! 🤔
       extraLuaPackages = (
         ps: [
-          ps.lua-curl
           ps.mimetypes
           ps.xml2lua
         ]

@@ -43,6 +43,7 @@ with vimPlugins;
   cmp-nvim-lsp
   cmp-treesitter
   dhall-vim
+  fidget-nvim
   fzf-lua
   git-blame-nvim
   haskell-tools-nvim
