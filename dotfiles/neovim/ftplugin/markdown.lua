@@ -1,4 +1,5 @@
 vim.opt.colorcolumn = "120"
+vim.opt.textwidth = 119
 
 vim.opt_local.foldmethod = "expr"
 vim.opt_local.foldexpr = "nvim_treesitter#foldexpr()"
@@ -14,3 +15,4 @@ vim.api.nvim_create_user_command("ReadingTime", readingTime, {})
 
 vim.api.nvim_set_keymap("n", "<leader>jt", "<cmd>JiraViewTicket<CR>",
         { noremap = true, desc = "Open Jira ticket under cursor" })
+

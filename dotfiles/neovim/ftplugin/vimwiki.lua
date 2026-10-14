@@ -8,6 +8,7 @@ vim.api.nvim_set_keymap("n", "<leader>wo", "<cmd>VimwikiTOC<CR>",
 
 vim.opt_local.spell = true
 vim.opt_local.shiftwidth = 2
+vim.opt.textwidth = 119
 
 local function createCards()
         local resultTable = vim.system({ "repeater", "create", vim.fn.expand("%") },
