@@ -4,14 +4,4 @@ vim.api.nvim_set_keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.setloclist()<
 
 local enabled_lsp_langs = { "elixir", "python", "lua", "nix", "typst", "c", "jinja", "elm" }
 
-for _, lang in ipairs(enabled_lsp_langs) do
-        vim.lsp.enable(lang)
-end
-
-vim.api.nvim_create_autocmd(
-        { "BufEnter", "CursorHold", "InsertLeave" }, {
-                callback = function(event)
-                        vim.lsp.codelens.refresh({ bufnr = 0 })
-                end,
-                pattern = { "*.nix", "*.py", "*.lua", "*.ex", "*.typ", "*.typst", "*.c", ".j2", ".elm" }
-        })
+vim.lsp.enable(enabled_lsp_langs)
