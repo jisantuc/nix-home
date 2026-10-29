@@ -179,6 +179,8 @@ in
         python3Packages.pylatexenc
         silicon
       ];
+
+      sideloadInitLua = true;
     };
 
     direnv = {
