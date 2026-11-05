@@ -7,16 +7,16 @@
 {
   mise = rustPlatform.buildRustPackage (finalAttrs: {
     pname = "mise";
-    version = "v2026.9.10";
+    version = "v2026.10.5";
 
     src = fetchFromGitHub {
       owner = "jdx";
       repo = "mise";
       tag = finalAttrs.version;
-      hash = "sha256-aK1z0Vc2TLU0NtJ7vVJNLdv2KY+bNdT6bmSSGF92fiY=";
+      hash = "sha256-2ca4K/BWuT4jdO3yjjQcwtB1lwieqYaBrdOUBoa7r/I=";
     };
 
-    cargoHash = "sha256-F3vx9neTX5yA36gRx/7Mk4LDCPYBUxPsqkfCPW+rm4I=";
+    cargoHash = "sha256-ruo/ZOhri7U6RIJkBG5z+PCtXM1qTxYrzqNUmJPxnWY=";
 
     buildInputs = [
       pkgs.openssl
