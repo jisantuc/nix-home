@@ -35,6 +35,10 @@
   kotlin.format = "[$symbol]($style)";
   lua.format = "[$symbol]($style)";
   meson.format = "[$symbol]($style)";
+  mise.disabled = false;
+  mise.format = "[$symbol]($style)";
+  mise.healthy_symbol = "🔪";
+  mise.unhealthy_symbol = "🍅";
   nim.format = "[$symbol]($style)";
   nix_shell.format = "[$symbol]($style)";
   nodejs.format = "[$symbol]($style)";
