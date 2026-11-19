@@ -176,7 +176,6 @@ in
       extraPackages = with pkgs; [
         lua-language-server
         nil
-        nodejs
         pyright
         python3Packages.pylatexenc
         silicon
