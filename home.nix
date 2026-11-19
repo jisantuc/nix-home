@@ -152,7 +152,8 @@ in
         git = {
           overrideGpg = true;
         };
-      };
+      }
+      // (import ./dotfiles/lazygit/conventional-commit-commands.nix);
     };
 
     neovim = {
@@ -175,6 +176,7 @@ in
       extraPackages = with pkgs; [
         lua-language-server
         nil
+        nodejs
         pyright
         python3Packages.pylatexenc
         silicon
