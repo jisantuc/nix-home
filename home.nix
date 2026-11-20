@@ -152,7 +152,8 @@ in
         git = {
           overrideGpg = true;
         };
-      };
+      }
+      // (import ./dotfiles/lazygit/conventional-commit-commands.nix);
     };
 
     neovim = {
